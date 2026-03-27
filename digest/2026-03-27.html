@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIBM Research Digest — 2026-03-27</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      font-family: Georgia, serif;
+      color: #05292C;
+      background: #ffffff;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 24px 80px;
+    }
+    h1 { font-size: 1.9rem; color: #06474D; margin-bottom: 0.25em; }
+    h2 { font-size: 1.35rem; color: #06474D; margin-top: 2.5em; margin-bottom: 0.3em; border-bottom: 2px solid #AAC9B8; padding-bottom: 0.2em; }
+    h3 { font-size: 1.05rem; color: #05292C; margin-top: 1.75em; margin-bottom: 0.25em; }
+    h3 a { color: #06474D; text-decoration: none; }
+    h3 a:hover { text-decoration: underline; }
+    p, li { font-size: 1rem; line-height: 1.65; color: #333; }
+    .subtitle { font-size: 1.05rem; color: #767676; margin-top: 0; margin-bottom: 1.5em; }
+    .meta { font-size: 0.9rem; color: #767676; margin-bottom: 0.25em; }
+    .lede {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      border-left: 4px solid #C55300;
+      padding-left: 1em;
+      margin: 1.5em 0;
+      color: #222;
+    }
+    .callout {
+      background: #F3F4F3;
+      border-left: 4px solid #06474D;
+      padding: 1em 1.25em;
+      margin: 1.5em 0;
+      font-size: 0.95rem;
+    }
+    .callout.warn {
+      background: #FEF3EC;
+      border-left-color: #C55300;
+    }
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 3px;
+      margin-bottom: 0.4em;
+    }
+    .label-core    { background: #06474D; color: #fff; }
+    .label-ext     { background: #AAC9B8; color: #05292C; }
+    .label-method  { background: #E8E8E8; color: #444; }
+    .label-polsale { background: #FEF3EC; color: #C55300; border: 1px solid #C55300; }
+    .paper-card {
+      border: 1px solid #E8E8E8;
+      border-radius: 4px;
+      padding: 1.1em 1.3em 0.9em;
+      margin: 1.2em 0;
+    }
+    .paper-card:hover { border-color: #AAC9B8; }
+    .aibm-angle {
+      background: #F3F4F3;
+      border-left: 3px solid #06474D;
+      padding: 0.6em 1em;
+      margin: 0.75em 0 0.5em;
+      font-size: 0.95rem;
+      color: #222;
+    }
+    .extension-ideas {
+      margin: 0.5em 0 0;
+      padding-left: 1.3em;
+      font-size: 0.93rem;
+    }
+    .extension-ideas li { margin-bottom: 0.4em; }
+    .warn-note {
+      background: #FEF3EC;
+      border-left: 3px solid #C55300;
+      padding: 0.5em 1em;
+      margin: 0.6em 0;
+      font-size: 0.88rem;
+      color: #7A3200;
+    }
+    .stats-bar {
+      display: flex;
+      gap: 1.5em;
+      flex-wrap: wrap;
+      margin: 1em 0 1.5em;
+      font-size: 0.93rem;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .stat { color: #555; }
+    .stat strong { color: #06474D; font-size: 1.1em; }
+    details { margin: 2em 0; }
+    details summary {
+      cursor: pointer;
+      font-size: 1.05rem;
+      font-weight: bold;
+      color: #06474D;
+      padding: 0.5em 0;
+      border-bottom: 1px solid #E0E0E0;
+      list-style: none;
+    }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::before { content: "▶ "; font-size: 0.8em; }
+    details[open] summary::before { content: "▼ "; }
+    details .low-rel-section { margin-top: 1em; }
+    details .low-rel-section h4 {
+      font-size: 0.95rem;
+      color: #06474D;
+      margin: 1.2em 0 0.4em;
+      border-bottom: 1px solid #E8E8E8;
+      padding-bottom: 0.2em;
+    }
+    details ul { padding-left: 1.3em; }
+    details li { font-size: 0.9rem; margin-bottom: 0.3em; }
+    details li a { color: #06474D; }
+    .hr-light { border: none; border-top: 1px solid #E8E8E8; margin: 0.5em 0 1em; }
+    footer {
+      margin-top: 4em;
+      font-size: 0.8rem;
+      color: #767676;
+      border-top: 1px solid #E0E0E0;
+      padding-top: 1em;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+<h1>AIBM Research Digest</h1>
+<p class="subtitle">American Institute for Boys and Men &nbsp;·&nbsp; Weekly digest &nbsp;·&nbsp; 2026-03-27</p>
+
+<div class="stats-bar">
+  <span class="stat">Sources: <strong>NBER, IZA</strong></span>
+  <span class="stat">Staged: <strong>25</strong></span>
+  <span class="stat">Flagged: <strong>10</strong></span>
+  <span class="stat">Low relevance: <strong>15</strong></span>
+  <span class="stat">Pre-filter exclusions: <strong>0</strong></span>
+</div>
+
+<!-- ================================================================
+     CORE
+     ================================================================ -->
+
+<h2>Core — directly about boys, men, or gender gaps</h2>
+
+<!-- 1 -->
+<div class="paper-card">
+  <span class="section-label label-core">#core</span>
+  <h3><a href="https://www.iza.org/publications/dp/18465/labor-market-outcomes-of-highly-educated-women-in-japan-the-role-of-field-of-study-and-stem-degrees" target="_blank">Labor Market Outcomes of Highly Educated Women in Japan: The Role of Field of Study and STEM Degrees</a></h3>
+  <p class="meta">Emiko Usui &nbsp;·&nbsp; IZA &nbsp;·&nbsp; March 2026</p>
+  <hr class="hr-light">
+  <p>Using the Japanese Panel Study of Employment Dynamics, Usui tracks earnings for college graduates over the first decade of their careers. Women with STEM bachelor's degrees start close to earnings parity with men, but face a 24.4% wage gap by years 6–10. Penalties are especially large for mothers, but remain sizable for childless women. The key exception: women with STEM advanced degrees or Medicine/Pharmacy degrees largely maintain parity throughout.</p>
+  <div class="aibm-angle">
+    <strong>AIBM angle:</strong> The paper frames the gender gap as a women's story, but the male benchmarks throughout are striking — men with only a high school diploma out-earn women with STEM bachelor's degrees 6–10 years out. That finding cuts against the simple "more STEM = more equality" narrative and speaks directly to AIBM's interest in credential returns across the male education distribution.
+  </div>
+</div>
+
+<!-- 2 -->
+<div class="paper-card">
+  <span class="section-label label-core">#core</span>
+  <h3><a href="https://www.iza.org/publications/dp/18463/gender-differences-in-pension-investment-the-role-of-biased-advice" target="_blank">Gender Differences in Pension Investment: The Role of Biased Advice</a></h3>
+  <p class="meta">Mirco Tonin &nbsp;·&nbsp; IZA &nbsp;·&nbsp; March 2026</p>
+  <hr class="hr-light">
+  <p>Using Italian pension fund records plus a vignette survey experiment, Tonin finds pension advisors are 22 percentage points less likely to recommend equity-focused investments to women than to otherwise identical men. A single information intervention making advisors aware of their own bias eliminated the gap in the experiment and reduced the real-client gender gap in actual investment choices by roughly 60% within five months.</p>
+  <div class="aibm-angle">
+    <strong>AIBM angle:</strong> The paper frames this as a story of bias against women, but the flip side is that men are systematically pushed toward riskier portfolios — which may mean higher expected returns or higher variance exposure depending on market conditions. The broader point for AIBM is that gendered financial behavior patterns are partially institution-driven, not just individual preference, which has implications for how we interpret observed gender gaps in wealth.
+  </div>
+</div>
+
+<!-- ================================================================
+     EXTENSION CANDIDATES
+     ================================================================ -->
+
+<h2>Extension candidates — strong design, gender cut possible</h2>
+
+<!-- 3 -->
+<div class="paper-card">
+  <span class="section-label label-ext">#extension-candidate</span>
+  <h3><a href="https://www.nber.org/papers/w34981" target="_blank">The Long-Term Decline of the U.S. Job Ladder</a></h3>
+  <p class="meta">Niklas Engbom, Aniket Baksy, Daniele Caratelli &nbsp;·&nbsp; NBER &nbsp;·&nbsp; March 2026</p>
+  <hr class="hr-light">
+  <p>Using Current Population Survey microdata from 1982–2023 and a partial-equilibrium job ladder model, Engbom et al. document that structural changes have substantially weakened employed workers' ability to climb from lower- to higher-paying jobs, contributing to four decades of wage stagnation. Workers today are meaningfully less likely to job-hop upward than in the 1980s.</p>
+  <div class="aibm-angle">
+    <strong>AIBM angle:</strong> Job ladder mobility has historically been the primary mechanism by which men without college degrees reached middle-class wages. A structural decline in ladder strength almost certainly hits men differently than women, given stark differences in occupational sorting. AIBM could quantify this directly using the same CPS data.
+  </div>
+  <p style="font-size:0.88rem; color:#555; margin: 0.6em 0 0.2em;"><strong>Extension ideas:</strong></p>
+  <ul class="extension-ideas">
+    <li>Apply the same CPS microdata (1982–2023) to estimate job-to-job transition rates and wage growth by sex — AIBM has CPS starter code in <code>corp/code_snippets/CPS/</code>. Headline: "Men without college degrees have lost more job ladder rungs than any other group."</li>
+    <li>Stratify the CPS analysis by education × sex to show whether the college wage premium for men vs. women has changed as the ladder has declined — speaks directly to the "why go to college?" question for boys.</li>
+    <li>Use NLSY79/97 to track actual wage trajectories for cohorts of men vs. women in historically ladder-intensive occupations (manufacturing, construction, logistics) vs. credential-intensive ones.</li>
+  </ul>
+</div>
+
+<!-- 4 -->
+<div class="paper-card">
+  <span class="section-label label-ext">#extension-candidate</span>
+  <h3><a href="https://www.nber.org/papers/w34986" target="_blank">What Makes New Work Different from More Work?</a></h3>
+  <p class="meta">David Autor, Caroline Chin, Anna M. Salomons, Bryan Seegmiller &nbsp;·&nbsp; NBER &nbsp;·&nbsp; March 2026</p>
+  <hr class="hr-light">
+  <p>Using the 1940/1950 Census complete-count files and ACS 2011–2023, Autor et al. study which workers end up in newly created occupational roles vs. doing more of existing work. New work is systematically different — it draws on higher-expertise workers — and the gains from new occupational creation are not evenly distributed across the workforce.</p>
+  <div class="aibm-angle">
+    <strong>AIBM angle:</strong> If new work is expertise-intensive, and expertise is unequally distributed by sex and credential level, the gender dimension of who benefits from occupational creation could be substantial. The ACS data means AIBM could do the gender cut directly.
+  </div>
+  <p style="font-size:0.88rem; color:#555; margin: 0.6em 0 0.2em;"><strong>Extension ideas:</strong></p>
+  <ul class="extension-ideas">
+    <li>Use ACS 2011–2023 (AIBM has ACS code in <code>corp/code_snippets/ACS/</code>) to identify new vs. established occupations by SOC code, then estimate the sex composition of new-work entrants. Headline: "New jobs created by technology are more credential-intensive — and men without degrees are being left out."</li>
+    <li>Cross-reference Autor's new-occupation classification with O*NET task data to test whether new occupations cluster in cognitive vs. physical task intensity, and whether the gap between men's and women's new-work access is growing.</li>
+    <li>Replicate for younger workers (ages 22–34) specifically to test whether young men are entering new work at comparable rates to young women at the same credential level.</li>
+  </ul>
+</div>
+
+<!-- 5 -->
+<div class="paper-card">
+  <span class="section-label label-ext">#extension-candidate</span>
+  <h3><a href="https://www.nber.org/papers/w34976" target="_blank">The Rise of the Modern Hospital and Early-Life Health: Evidence from the Hill-Burton Act</a></h3>
+  <p class="meta">Owen Thompson, Jason Fletcher, Karin Wu &nbsp;·&nbsp; NBER &nbsp;·&nbsp; March 2026</p>
+  <hr class="hr-light">
+  <p>Thompson et al. use Hill-Burton Act grants (federal hospital construction subsidies from the 1950s–60s) as a natural experiment to study the effect of expanded maternity care access on infant health. Grants for public hospitals improved infant health outcomes in affected counties.</p>
+  <div class="aibm-angle">
+    <strong>AIBM angle:</strong> A large developmental literature documents that male infants are more biologically vulnerable to perinatal health shocks than female infants — higher infant mortality, greater sensitivity to maternal stress, longer developmental windows. If Hill-Burton improved maternity care, the gains may have been sex-differentiated. The paper doesn't appear to test this; it's a concrete and publishable extension.
+  </div>
+  <p style="font-size:0.88rem; color:#555; margin: 0.6em 0 0.2em;"><strong>Extension ideas:</strong></p>
+  <ul class="extension-ideas">
+    <li>Link the Hill-Burton grant data (publicly available) to NCHS birth/infant death records from the 1950s–70s, stratified by infant sex. Test whether neonatal mortality reductions were larger for boys — consistent with the male vulnerability hypothesis.</li>
+    <li>Extend the analysis to longer-run outcomes (educational attainment, earnings) using Census or NLSY linkage, testing whether boys exposed to better perinatal care show larger adult gains than girls.</li>
+    <li>Frame a modern analog using ECLS-K starter code in <code>corp/code_snippets/ECLS/</code>: do boys benefit more from improved prenatal care access in recent Medicaid expansions?</li>
+  </ul>
+</div>
+
+<!-- ================================================================
+     POLITICALLY SALIENT
+     ================================================================ -->
+
+<h2>Politically salient — relevant to current policy debates</h2>
+
+<!-- 6 -->
+<div class="paper-card">
+  <span class="section-label label-polsale">#politically-salient</span>
+  <h3><a href="https://www.nber.org/papers/w34984" target="_blank">Artificial Intelligence, Productivity, and the Workforce: Evidence from Corporate Executives</a></h3>
+  <p class="meta">Salomé Baslandze, Zachary Edwards, John Graham, et al. &nbsp;·&nbsp; NBER &nbsp;·&nbsp; March 2026</p>
+  <hr class="hr-light">
+  <p>A survey of nearly 750 corporate executives documents substantial heterogeneity in AI adoption — over half have invested, with smaller firms lagging. The paper tracks how AI is reshaping workforce composition and productivity from the employer side, with variation across firm size and sector.</p>
+  <div class="aibm-angle">
+    <strong>AIBM angle:</strong> AI displacement risks are concentrated in male-dominated occupations (manufacturing, transportation, logistics) and in firms where men without college degrees are overrepresented. The paper doesn't report sex breakdowns, but the political salience is high: the workforce disruption narrative is frequently told without disaggregating who bears the cost.
+  </div>
+</div>
+
+<!-- 7 -->
+<div class="paper-card">
+  <span class="section-label label-polsale">#politically-salient</span>
+  <h3><a href="https://www.nber.org/papers/w34975" target="_blank">Standardized Test Scores and Academic Performance at a Public University System</a></h3>
+  <p class="meta">Theodore J. Joyce, Mina Afrouzi Khosroshahi, Sarah Truelsch, et al. &nbsp;·&nbsp; NBER &nbsp;·&nbsp; March 2026</p>
+  <hr class="hr-light">
+  <p>Studying CUNY (a large public university system), Joyce et al. find SAT/ACT scores predict college success at non-elite public institutions — consistent with recent findings at Ivy-Plus schools. The paper weighs into the ongoing debate about whether test scores should be reinstated as a meaningful admissions criterion at public universities.</p>
+  <div class="aibm-angle">
+    <strong>AIBM angle:</strong> Boys and men consistently underperform girls on GPA relative to their test scores — a well-documented gap that works against men in holistic admissions. If standardized tests are reinstated as a meaningful criterion at public universities, men (especially lower-income men) may regain access they are currently losing to GPA-weighted admissions processes.
+  </div>
+</div>
+
+<!-- 8 -->
+<div class="paper-card">
+  <span class="section-label label-polsale">#politically-salient</span>
+  <h3><a href="https://www.nber.org/papers/w34990" target="_blank">The Effects of California's $20 Fast Food Minimum Wage on Prices</a></h3>
+  <p class="meta">Jeffrey Clemens, Olivia Edwards, Jonathan Meer, Joshua D. Nguyen &nbsp;·&nbsp; NBER &nbsp;·&nbsp; March 2026</p>
+  <hr class="hr-light">
+  <p>Using BLS consumer price data across 21 metro areas, Clemens et al. find California's AB 1228 ($20 fast food minimum wage, implemented April 2024) raised fast food prices measurably. The paper provides a clean quasi-experimental test of price effects from a large sector-specific minimum wage increase.</p>
+  <div class="aibm-angle">
+    <strong>AIBM angle:</strong> Young men are heavily overrepresented in fast food and service industry employment — they bear disproportionate exposure to both the wage gains and any employment adjustments from sector-specific minimum wage hikes. This paper covers the price side; the employment-side question (who loses hours or jobs) is the more direct AIBM interest, and the AB 1228 natural experiment is clean enough to support follow-on work.
+  </div>
+</div>
+
+<!-- 9 -->
+<div class="paper-card">
+  <span class="section-label label-polsale">#politically-salient</span>
+  <h3><a href="https://www.nber.org/papers/w34980" target="_blank">Does Employment Shift Mothers' Voting Behavior and Political Identity?</a></h3>
+  <p class="meta">Jacob Bastian &nbsp;·&nbsp; NBER &nbsp;·&nbsp; March 2026</p>
+  <hr class="hr-light">
+  <p>Using EITC expansions and 1990s welfare reform as instruments for maternal employment across five decades, Bastian finds a surprising causal result: working lowers voter turnout and shifts political identity for mothers, despite a positive raw correlation. The IV design separates selection (employed women are more politically engaged) from the treatment effect of employment itself.</p>
+  <div class="aibm-angle">
+    <strong>AIBM angle:</strong> The direct subject is mothers, but the paper's IV strategy points to the mirror question AIBM should be asking: if employment shapes political identity for women pushed into work by welfare policy, what happens to men's political identity and civic participation when employment disappears? Male labor force exit and political disengagement is understudied, and this design is a template for approaching it causally.
+  </div>
+</div>
+
+<!-- 10 -->
+<div class="paper-card">
+  <span class="section-label label-polsale">#politically-salient</span>
+  <h3><a href="https://www.iza.org/publications/dp/18462/work-authorization-delays-and-economic-integration-of-asylum-seekers-in-the-united-states" target="_blank">Work Authorization Delays and Economic Integration of Asylum Seekers in the United States</a></h3>
+  <p class="meta">Catalina Amuedo-Dorantes &nbsp;·&nbsp; IZA &nbsp;·&nbsp; March 2026</p>
+  <hr class="hr-light">
+  <p>Linking USCIS administrative records to ACS microdata and using congestion-driven variation in processing times as an instrument, Amuedo-Dorantes finds that faster work authorization substantially boosts labor force participation, employment, and earnings for asylum seekers in the first decade after arrival. Effects diminish over time — processing delays slow integration but do not permanently block it.</p>
+  <div class="aibm-angle">
+    <strong>AIBM angle:</strong> Asylum-seeking populations skew heavily male, and work authorization is a central flashpoint in current immigration enforcement debates. This paper's clean IV design demonstrates that administrative timing meaningfully constrains labor market integration — relevant context for any policy analysis touching immigrant men's employment outcomes.
+  </div>
+</div>
+
+<!-- ================================================================
+     LOW RELEVANCE
+     ================================================================ -->
+
+<details>
+  <summary>Low relevance (15 papers — spot-check triage quality)</summary>
+  <div class="low-rel-section">
+    <ul>
+      <li><a href="https://www.nber.org/papers/w34972" target="_blank">Reserve Demand Estimation with Minimal Theory</a> — Lagos, Navarro — NBER — monetary economics theory, no gender or labor angle</li>
+      <li><a href="https://www.nber.org/papers/w34979" target="_blank">When Are Decisions Improvable? An Evaluation of Diagnostic Methods</a> — Bernheim et al. — NBER — behavioral decision methods, no AIBM relevance</li>
+      <li><a href="https://www.nber.org/papers/w34982" target="_blank">Household Migration and Collateral Constraint: Cash-based Housing Resettlement in China</a> — He et al. — NBER — China housing policy, no gender angle</li>
+      <li><a href="https://www.nber.org/papers/w34974" target="_blank">Financial Conditions Targeting in a Multi-Asset Open Economy</a> — Caballero, Simsek — NBER — monetary policy theory, no AIBM relevance</li>
+      <li><a href="https://www.nber.org/papers/w34977" target="_blank">From Free Rider to Innovator: The Rise of China's Drug Development</a> — Barwick et al. — NBER — pharmaceutical innovation, no gender or labor angle</li>
+      <li><a href="https://www.nber.org/papers/w34978" target="_blank">Climate Fairness and Growth: Allocating the Remaining Carbon Budget</a> — Hale et al. — NBER — climate policy, no AIBM relevance</li>
+      <li><a href="https://www.nber.org/papers/w34983" target="_blank">An 'Austrian' Model of International Specialization</a> — Antràs, Kulesza — NBER — trade theory, no AIBM relevance</li>
+      <li><a href="https://www.nber.org/papers/w34985" target="_blank">Contract Enforcement and Young Firm Capital Structure: A Global Perspective</a> — Basante Pereira, Simonovska — NBER — firm finance, no AIBM relevance</li>
+      <li><a href="https://www.nber.org/papers/w34988" target="_blank">Lender of Last Resort and Local Economic Outcomes</a> — Janas — NBER — Great Depression banking history, labor effects too distal for AIBM</li>
+      <li><a href="https://www.nber.org/papers/w34989" target="_blank">The Precarious Financial Lives of College Students in Sub-Saharan Africa</a> — Bau et al. — NBER — Zambia higher ed finance, Africa context outside AIBM scope</li>
+      <li><a href="https://www.nber.org/papers/w34991" target="_blank">Private Credit, Balance Sheets and Financial Stability</a> — Matvos et al. — NBER — private credit fund structure, no AIBM relevance</li>
+      <li><a href="https://www.nber.org/papers/w34973" target="_blank">Identifying Uncertainty, Learning about Productivity, and Human Capital Acquisition</a> — Gualdani et al. — NBER — structural monopsony model, too technical/distal for AIBM replication</li>
+      <li><a href="https://www.nber.org/papers/w34987" target="_blank">Substitution and Income Effects of Labor Income Taxation</a> — Graber et al. — NBER — ETI estimation using Norwegian admin data, not replicable for AIBM</li>
+      <li><a href="https://www.iza.org/publications/dp/18464/climate-change-adaptation-and-development-a-conceptual-framework" target="_blank">Climate Change Adaptation and Development: A Conceptual Framework</a> — Garg — IZA — climate adaptation framework, no AIBM relevance</li>
+      <li><a href="https://www.iza.org/publications/dp/18461/the-labor-demand-implications-of-brand-capital-evidence-from-trademark-transactions" target="_blank">The Labor Demand Implications of Brand Capital: Evidence from Trademark Transactions</a> — Arellano-Bover et al. — IZA — brand capital and employment, no gender angle</li>
+    </ul>
+  </div>
+</details>
+
+<details>
+  <summary>Pre-filter exclusions (0 papers)</summary>
+  <div class="low-rel-section">
+    <p style="font-size:0.9rem; color:#555;">None — all staged papers either lack program metadata or fall within included programs.</p>
+  </div>
+</details>
+
+<footer>
+  Generated by AIBM Research AI &nbsp;·&nbsp; 2026-03-27 &nbsp;·&nbsp; Sources: NBER, IZA
+</footer>
+
+</body>
+</html>
