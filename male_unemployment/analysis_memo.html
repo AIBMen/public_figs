@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Young College-Educated Men Are Falling Further Behind — AIBM</title>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      font-family: Georgia, serif;
+      color: #05292C;
+      background: #ffffff;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 24px 80px;
+    }
+    h1 { font-size: 1.9rem; color: #06474D; margin-bottom: 0.25em; }
+    h2 { font-size: 1.35rem; color: #06474D; margin-top: 2.5em; margin-bottom: 0.3em; border-bottom: 2px solid #AAC9B8; padding-bottom: 0.2em; }
+    h3 { font-size: 1.05rem; color: #06474D; margin-top: 1.5em; margin-bottom: 0.2em; }
+    p, li { font-size: 1rem; line-height: 1.65; color: #333; }
+    .subtitle { font-size: 1.05rem; color: #767676; margin-top: 0; margin-bottom: 1.5em; }
+    .lede { font-size: 1.1rem; line-height: 1.7; border-left: 4px solid #C55300; padding-left: 1em; margin: 1.5em 0; color: #222; }
+    .callout {
+      background: #F3F4F3;
+      border-left: 4px solid #06474D;
+      padding: 1em 1.25em;
+      margin: 1.5em 0;
+      font-size: 0.95rem;
+    }
+    .callout.warn {
+      background: #FEF3EC;
+      border-left-color: #C55300;
+    }
+    .fig-wrap { margin: 2em 0 0.5em; }
+    .fig-caption {
+      font-size: 0.8rem;
+      color: #767676;
+      margin-top: 0.4em;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    table { border-collapse: collapse; width: 100%; font-size: 0.9rem; margin: 1em 0; }
+    th { background: #06474D; color: white; padding: 6px 10px; text-align: left; }
+    td { padding: 5px 10px; border-bottom: 1px solid #E0E0E0; }
+    tr:nth-child(even) td { background: #F9F9F9; }
+    .orange { color: #C55300; font-weight: bold; }
+    .green  { color: #06474D; font-weight: bold; }
+    footer { margin-top: 4em; font-size: 0.8rem; color: #767676; border-top: 1px solid #E0E0E0; padding-top: 1em; }
+
+    /* Key stat tiles */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25em;
+      margin: 2em 0;
+    }
+    .stat-tile {
+      padding: 1.1em 1em;
+      text-align: center;
+      border-radius: 2px;
+    }
+    .stat-tile.orange-tile { background: #FEF3EC; border-top: 4px solid #C55300; }
+    .stat-tile.teal-tile   { background: #EFF5F2; border-top: 4px solid #AAC9B8; }
+    .stat-tile .big-num { font-size: 2rem; font-weight: bold; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .stat-tile.orange-tile .big-num { color: #C55300; }
+    .stat-tile.teal-tile   .big-num { color: #06474D; }
+    .stat-tile .tile-label { font-size: 0.88rem; color: #555; margin-top: 0.3em; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.4; }
+
+    /* Parking Lot */
+    .parking-lot {
+      background: #F8F8F8;
+      border: 2px dashed #C0CECA;
+      border-radius: 3px;
+      padding: 1.5em 2em;
+      margin-top: 4em;
+    }
+    .parking-lot h2 {
+      color: #888;
+      border-bottom-color: #D5D5D5;
+      margin-top: 0;
+    }
+    .parking-lot h3 { color: #666; }
+    .parking-lot p, .parking-lot li { color: #555; font-size: 0.95rem; }
+    .flag { color: #C55300; font-weight: bold; }
+    code { font-family: "Courier New", monospace; background: #F0F0F0; padding: 0.1em 0.35em; font-size: 0.88em; border-radius: 2px; }
+
+    details summary { list-style: none; }
+    details summary::-webkit-details-marker { display: none; }
+    details[open] summary { margin-bottom: 0; }
+    details[open] summary::first-letter { content: '▼'; }
+
+    @media (max-width: 680px) {
+      .stat-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<h1>Young College-Educated Men Are Falling Further Behind</h1>
+<p class="subtitle">
+  American Institute for Boys and Men &nbsp;·&nbsp; BLS + CPS microdata analysis
+  &nbsp;·&nbsp; Data through Feb 2026 (BLS) / Dec 2025 (CPS)
+  &nbsp;·&nbsp; <em>Analysis memo — draft, not for circulation</em>
+</p>
+
+<p class="lede">
+  The recent rise in unemployment among college graduates is not gender-neutral.
+  Young men ages 22–27 with a BA or higher are running nearly <strong>3 percentage points</strong>
+  above their historical baseline — more than 2.5 times the excess for young women with the same credentials.
+  The gap is not explained by the overall labor market slowdown: men as a whole are on trend.
+  This is a story about where the excess is landing: at the top of the education distribution,
+  concentrated among the youngest men.
+</p>
+
+<!-- Key stat tiles -->
+<div class="stat-grid">
+  <div class="stat-tile orange-tile">
+    <div class="big-num">+2.9 pp</div>
+    <div class="tile-label">Young men BA+ (ages 22–27)<br>above historical baseline</div>
+  </div>
+  <div class="stat-tile teal-tile">
+    <div class="big-num">+1.1 pp</div>
+    <div class="tile-label">Young women BA+ (ages 22–27)<br>above historical baseline</div>
+  </div>
+  <div class="stat-tile orange-tile">
+    <div class="big-num">~4.1 pp</div>
+    <div class="tile-label">Men BA+ peak at age 23<br>above historical baseline</div>
+  </div>
+</div>
+
+<!-- Background and motivation -->
+<h2 style="margin-top: 1.75em;">Background</h2>
+
+<p>
+  The Federal Reserve Bank of New York tracks labor market outcomes for recent college graduates —
+  workers aged 22–27 with a bachelor's degree or higher. As of 2024, recent graduates had an
+  unemployment rate of <strong>5.6%</strong>: below the 7.8% for young workers without a college degree,
+  but well above the 3.1% for college-educated workers overall and the 4.2% for all adults.
+  Underemployment — working in jobs that typically don't require a degree — stood at 42%,
+  near its highest level since 2020.
+</p>
+<p>
+  The question those headline numbers don't answer is whether 5.6% is <em>unusual</em> given where
+  the overall labor market is. Unemployment is up broadly — from 3.5% in mid-2023 to around 4.4%
+  in late 2025 — and younger workers always take disproportionate hits in slowdowns.
+  AI has attracted the most public attention as an explanation: if generative tools are automating
+  entry-level white-collar work, junior analysts and developers may simply find fewer openings.
+  Employ America's Raderman (July 2025) examined this carefully and found the evidence thin —
+  the relative deterioration in graduate outcomes predates ChatGPT, and majors with high AI exposure
+  haven't seen consistently worse unemployment. We treat the underlying cause as an open question
+  but don't adjudicate it here.
+</p>
+<p>
+  Konczal (January 2026) developed a cleaner diagnostic. He regressed each demographic group's
+  unemployment rate against overall unemployment using pre-pandemic historical data, then asked:
+  given where overall unemployment is now, how far above or below its predicted level is each group running?
+  Most groups cluster at zero — on trend. BA+ graduates stand out, running about 1 percentage point
+  above where history predicts. This analysis replicates that approach using CPS microdata and adds
+  a question Konczal didn't ask: <strong>is the BA+ excess distributed equally between men and women?</strong>
+</p>
+<p>
+  It is not. The remainder of this memo documents the gap.
+</p>
+
+<details style="margin: 1.5em 0;">
+  <summary style="cursor: pointer; font-size: 0.95rem; font-weight: bold; color: #06474D; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; padding: 0.5em 0; user-select: none;">
+    ▶ What exactly is an "unemployment residual"? (methodological note)
+  </summary>
+  <div style="margin-top: 0.75em; padding: 1em 1.25em; background: #F3F4F3; border-left: 4px solid #06474D; font-size: 0.95rem;">
+
+    <p style="margin-top: 0;"><strong>The core problem the method solves.</strong>
+    Unemployment rates across demographic groups tend to move together — when the economy slows,
+    teen unemployment goes up, Black unemployment goes up, college-grad unemployment goes up.
+    But they don't all move by the same amount, and they start from very different levels.
+    Looking at raw rates can't distinguish "this group is doing badly" from "this group is doing exactly
+    what it always does when the economy softens."</p>
+
+    <p><strong>The solution: strip out the business cycle, see what's left.</strong>
+    For each group, we estimate its <em>normal</em> relationship with overall unemployment using
+    pre-pandemic historical data (1994–2019 for BLS series; 1989–2019 for CPS), then measure
+    how far it deviates from that normal relationship right now. That deviation is the residual.</p>
+
+    <p><strong>The mechanics.</strong> For each group, fit this regression:</p>
+    <p style="font-family: 'Courier New', monospace; background: #E8E8E8; padding: 0.4em 0.75em; font-size: 0.88em;">
+      log(group_urate) = α + β × log(overall_urate)
+    </p>
+    <p>Then for recent months, plug in the actual overall rate to get a <em>predicted</em> group rate, and compute:</p>
+    <p style="font-family: 'Courier New', monospace; background: #E8E8E8; padding: 0.4em 0.75em; font-size: 0.88em;">
+      residual = actual group rate − predicted group rate &nbsp;(in percentage points)
+    </p>
+    <p>The residual answers: <em>given that overall unemployment is ~4.4% right now, how far above or below
+    where history would put this group is the group actually running?</em></p>
+
+    <p><strong>What beta (β) tells you.</strong>
+    Beta captures cyclical sensitivity. Men overall (β = 1.09) move slightly more than proportionally
+    with the overall rate. Teen workers (β = 0.76) are less sensitive — their rate is high in good times
+    and bad, so it doesn't swing as much proportionally. The model accounts for each group's sensitivity
+    when computing the predicted value.</p>
+
+    <p><strong>A concrete example.</strong>
+    Say BA+ unemployment in December 2025 is 4.0% and overall unemployment is 4.4%.
+    Plugging 4.4% into the model gives a predicted BA+ rate of ~3.0%.
+    Actual (4.0%) − Predicted (3.0%) = <strong>+1.0 pp residual</strong>: BA+ unemployment is running
+    1 pp above where history says it should be. Running the same calculation for men overall might give
+    actual 4.4%, predicted 4.4% → <strong>0 pp</strong>: exactly on trend.</p>
+
+    <p><strong>Known limitation: upward drift.</strong>
+    Even in pre-pandemic hold-out tests, the BA+ and education-group residuals tend to run slightly positive —
+    the historical relationship has drifted slowly, so the model isn't perfectly calibrated.
+    This is why we emphasize the <em>gap between male and female residuals</em> rather than the
+    absolute level of either. If both lines carry the same drift bias, the difference between them
+    is cleaner than either line alone.</p>
+
+    <p><strong>Age bands in Figures 3 and 4.</strong>
+    Rather than single years of age, the age-profile charts use overlapping 3-year bands centered on
+    each labeled age — so "age 23" represents everyone aged 22–24, "age 24" represents ages 23–25, and so on.
+    Adjacent points share two-thirds of their observations, which means the curves are partially smoothed
+    by construction (not just by the underlying data). The practical effect: the peak at "age 23" is driven
+    by the 22–24 age group, not 23-year-olds specifically, and the apparent smoothness of the curves
+    overstates how gradually things actually change year to year. Cell sizes at the youngest and oldest
+    ages shown are smaller and estimates there are noisier.</p>
+
+    <p style="margin-bottom: 0;"><strong>What it can and can't tell you.</strong>
+    It can identify whether a group is doing better or worse than its own historical pattern, controlling
+    for the business cycle. It cannot establish why, whether the historical relationship is still the
+    right benchmark, or whether excess unemployment reflects demand- or supply-side factors.
+    It is a diagnostic, not a structural model.</p>
+
+  </div>
+</details>
+
+<div class="callout warn">
+  <strong>Replication note.</strong> This analysis extends Konczal (January 2026) using CPS microdata disaggregated by sex.
+  Two BLS groups in our Konczal-window replication (Nov–Dec 2025) diverge from his published figures:
+  Age 20–24 (+0.42 pp vs. his ~+1.0 pp) and Black (−0.34 pp vs. his slight positive).
+  Most likely cause: BLS data vintage differences between his January 2026 pull and ours.
+  These divergences <em>do not</em> affect the AIBM headline findings (Sections 2–3), which use CPS microdata.
+  <strong>Investigate and resolve before making any public replication claim.</strong>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<h2>1 &nbsp; BLS Context: Most Demographic Groups Are on Trend</h2>
+
+<p>
+  Since mid-2023, overall U.S. unemployment has risen roughly a full percentage point.
+  For most demographic groups, this rise tracks exactly where historical patterns predict.
+  Figure 1 shows residuals from a simple log-log regression of each group's unemployment
+  rate against the overall U-3 rate, estimated on pre-pandemic data (1994–2019).
+  The two most recent months (January–February 2026) are averaged for each group.
+</p>
+<p>
+  The clearest outlier is <strong class="orange">BA+ graduates</strong> (+0.98 pp), followed by Asian workers (+1.27 pp —
+  a pattern also noted by Konczal and likely driven partly by the BA+ concentration in this group).
+  Men overall are essentially on trend (+0.01 pp), as are women (+0.04 pp).
+  Several groups — including Black workers, Hispanics, teen women, and workers without a high school diploma —
+  are running <em>below</em> their historical baselines, a pattern that warrants its own investigation
+  but that is not the focus here.
+</p>
+
+<div class="fig-wrap">
+  <div id="chart-bls" style="height: 620px;"></div>
+</div>
+<p class="fig-caption">
+  <strong>Figure 1.</strong> Unemployment residual by demographic group (BLS), Jan–Feb 2026 average.
+  Bars show percentage points above (+) or below (−) the level predicted by each group's historical
+  relationship with overall U-3. Estimated on 1994–2019 monthly data.
+  Source: Bureau of Labor Statistics public API; authors' calculations.
+</p>
+
+<div class="callout">
+  <strong>How to read this chart.</strong> Each bar shows how far a group's current unemployment rate sits
+  above or below what its historical relationship with overall unemployment would predict.
+  Near zero = on trend. Positive = running hotter than history suggests. Negative = running cooler.
+  The key benchmark is not the absolute residual but whether a group stands out from peers.
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<h2>2 &nbsp; The Male BA+ Gap: Young Adults Ages 22–27</h2>
+
+<p>
+  The aggregate BA+ excess conceals a stark sex divide. Using CPS microdata for workers ages 22–27,
+  Figure 2 shows the unemployment residual broken out by education level and sex.
+</p>
+<p>
+  The BA+ column tells the story. Young men with college degrees are running
+  <strong class="orange">+2.9 percentage points</strong> above their historical baseline.
+  Young college-educated women are running <strong class="green">+1.1 percentage points</strong> above —
+  meaningful, but less than half the male excess. The gap of roughly 1.8 percentage points is not
+  explained by the overall labor market slowdown; at that aggregate level, men and women are both near trend.
+</p>
+<p>
+  For workers with some college or a high school diploma, male and female residuals are similar and
+  modestly positive (+0.5–0.7 pp for both sexes). The sex gap is concentrated at the top of the
+  education distribution, among workers who presumably had the most to gain from their credentials.
+</p>
+
+<div class="fig-wrap">
+  <div id="chart-young-adult" style="height: 440px;"></div>
+</div>
+<p class="fig-caption">
+  <strong>Figure 2.</strong> Unemployment residual by education and sex, workers ages 22–27.
+  Average of the two months ending December 2025, using 12-month rolling unemployment rates.
+  Less-than-HS category excluded from chart (see note below).
+  Source: IPUMS Current Population Survey; authors' calculations.
+</p>
+
+<div class="callout warn">
+  <strong>Less-than-HS anomaly (excluded from Figure 2).</strong>
+  Young women without a high school diploma show a residual of −6.3 pp — far below their historical
+  baseline and far outside the range of any other group. This is not noise; it appears to reflect a
+  structural shift in low-education female employment (possibly service-sector hiring or domestic work).
+  Young men without HS are +1.9 pp above baseline.
+  Decision needed before publication: investigate separately, note briefly, or drop from the brief.
+</div>
+
+<!-- Summary table for section 2 -->
+<table>
+  <thead>
+    <tr>
+      <th>Education group</th>
+      <th>Male residual (pp)</th>
+      <th>Female residual (pp)</th>
+      <th>All residual (pp)</th>
+      <th>Male − Female gap</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>BA+</strong></td>
+      <td class="orange">+2.89</td>
+      <td>+1.10</td>
+      <td>+1.89</td>
+      <td><strong class="orange">+1.79 pp</strong></td>
+    </tr>
+    <tr>
+      <td>Some College</td>
+      <td>+0.61</td>
+      <td>+0.66</td>
+      <td>+0.64</td>
+      <td>−0.05 pp</td>
+    </tr>
+    <tr>
+      <td>HS Diploma</td>
+      <td>+0.54</td>
+      <td>+0.54</td>
+      <td>+0.52</td>
+      <td>+0.00 pp</td>
+    </tr>
+    <tr>
+      <td>Less than HS</td>
+      <td>+1.88</td>
+      <td style="color:#C55300">−6.27 ⚠</td>
+      <td>−0.80</td>
+      <td>+8.15 pp ⚠</td>
+    </tr>
+  </tbody>
+</table>
+<p class="fig-caption">Ages 22–27. Nov–Dec 2025 average (2-month window, 12-month rolling rates). ⚠ = anomalous, see note.</p>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<h2>3 &nbsp; The Gap Is Concentrated at the Youngest Ages</h2>
+
+<p>
+  The aggregate 22–27 comparison understates the intensity of the gap at younger ages.
+  Figure 3 shows the unemployment residual for BA+ workers by single year of age (collapsed into
+  3-year bands centered on each age), separately for men and women.
+</p>
+<p>
+  Among men, the BA+ excess peaks at <strong class="orange">approximately +4.1 percentage points at age 23</strong>
+  and remains above +2 pp through age 26. It fades through the late 20s but stays elevated (+1.1 pp) into the early 30s.
+  Among women, the excess is lower throughout — around 1.1–1.3 pp in the early 20s — and does not show a sharp peak.
+  The male disadvantage is largest and most persistent at ages where workers are earliest in their careers.
+</p>
+<p>
+  Note that both lines sit modestly above zero even in pre-pandemic hold-out data, reflecting a known
+  upward drift in this method (also flagged by Konczal). The meaningful comparison is the
+  <em>gap between male and female residuals</em>, not the absolute level of either line.
+</p>
+
+<div class="fig-wrap">
+  <div id="chart-age-ba" style="height: 420px;"></div>
+</div>
+<p class="fig-caption">
+  <strong>Figure 3.</strong> Unemployment residual by age and sex, BA+ workers.
+  Each point represents an overlapping 3-year age band centered on the labeled age (e.g., "23" = ages 22–24;
+  "24" = ages 23–25). Adjacent points share two-thirds of their observations, so the curves are
+  partially smoothed by construction. Average of two months ending December 2025, using 12-month rolling rates.
+  Residual from log-log OLS estimated on 1989–2019.
+  Source: IPUMS CPS; authors' calculations.
+</p>
+
+<p>
+  Figure 4 shows the same analysis for workers without a four-year degree.
+  Young men without college degrees also run above their historical baseline in the early 20s (+1.9–2.2 pp at ages 19–20),
+  though the pattern is less starkly male-concentrated than among the BA+.
+  Young women without college degrees also run modestly above baseline in the early 20s (+1.5–1.7 pp),
+  before dipping below trend in their mid-20s.
+</p>
+
+<div class="fig-wrap">
+  <div id="chart-age-notba" style="height: 420px;"></div>
+</div>
+<p class="fig-caption">
+  <strong>Figure 4.</strong> Unemployment residual by age and sex, workers without a four-year degree.
+  Same method as Figure 3: overlapping 3-year age bands centered on labeled age. Ages 19–30 shown.
+  Source: IPUMS CPS; authors' calculations.
+</p>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<h2>4 &nbsp; Implications</h2>
+
+<p>
+  The male concentration is the analytically important finding. If the BA+ excess were gender-neutral,
+  it would suggest something about the college credential broadly — an oversupply of graduates, a broad
+  slowdown in credential-requiring roles, cyclical dynamics that hit the college-educated the same way
+  regardless of sex. Explanations like those predict a symmetric gap. The data show an asymmetric one.
+</p>
+<p>
+  Two speculative mechanisms are worth examining, though this analysis cannot establish either.
+  First, <strong>field of study and sector concentration:</strong> young men with college degrees are
+  more concentrated in computer science, engineering, finance, and business — fields where
+  entry-level hiring has been most discussed in connection with AI-driven restructuring and the
+  broader tech pullback since 2022. If employers in those fields are delaying or eliminating junior
+  roles, men may absorb a disproportionate share of the impact because of where their degrees take them.
+  Second, <strong>underrepresentation in resilient sectors:</strong> women BA+ graduates are more likely
+  to enter health, education, and social services — fields that have held up well and that have
+  consistently lower underemployment rates. The male-female gap in BA+ unemployment may partly reflect
+  the different sectoral bets men and women make with their degrees, rather than a sex-specific hiring
+  penalty within sectors.
+</p>
+<p>
+  Neither explanation is fully satisfying. The timing of the male excess — concentrated at ages 22–24
+  and fading through the late 20s — is consistent with something specific to labor market entry
+  rather than an ongoing structural disadvantage. Understanding whether it's a one-time cohort effect
+  or a persistent new pattern would require tracking these graduates longitudinally.
+</p>
+<p>
+  One thing the data do establish clearly: the college-educated unemployment problem is not one problem.
+  Young college-educated women are also running above baseline (+1.1 pp), so this is not a story where
+  women are unaffected. But the gap between men and women — nearly 1.8 percentage points at ages 22–27,
+  and nearly 3 percentage points at the peak (age 23) — is too large to treat as a rounding error.
+  Any serious account of why BA+ unemployment is elevated needs to explain why it's hitting men
+  roughly 2.5 times harder.
+</p>
+
+<div class="callout">
+  <strong>Method in brief.</strong>
+  For each demographic group, we estimate a log-log OLS regression of the group's monthly unemployment
+  rate against the overall U-3 rate, trained on pre-pandemic data (1994–2019 for BLS series; 1989–2019
+  for CPS series). We project forward: given the actual overall rate, what would we expect the group rate
+  to be? The residual (actual minus predicted) shows whether a group is running above or below its
+  historical pattern. BLS residuals are averaged over January–February 2026 (two most recent months).
+  CPS residuals use 12-month rolling unemployment rates averaged over November–December 2025.
+  CPS data sourced from IPUMS (YEAR, MONTH, AGE, SEX, EDUC, EMPSTAT, WTFINL);
+  BA+ = EDUC ≥ 111; unemployment = EMPSTAT 20–22.
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PARKING LOT -->
+<div class="parking-lot">
+  <h2>⚠ PARKING LOT — Internal Review Only. Does Not Go in Published Brief.</h2>
+
+  <h3>Open flags before publication</h3>
+  <ul>
+    <li>
+      <span class="flag">⚠ Konczal replication divergences.</span>
+      Our Age 20–24 BLS residual is +0.42 pp vs. Konczal's ~+1.0 pp;
+      our Black residual is −0.34 pp vs. his slight positive (Nov–Dec 2025 window).
+      Most likely: BLS data vintage. These do not affect CPS findings.
+      Must resolve before any public replication claim.
+    </li>
+    <li>
+      <span class="flag">⚠ [DATE] placeholder</span> in brief — confirm publication date.
+    </li>
+    <li>
+      <span class="flag">⚠ [publication] placeholder</span> in footnote 1 — confirm Konczal's outlet.
+    </li>
+    <li>
+      <span class="flag">⚠ Less-than-HS women anomaly</span> (−6.27 pp residual).
+      Decision needed: investigate separately, mention briefly in brief, or drop.
+      The anomaly is real and structural, not a data artifact, but it is outside the scope of the current analysis.
+    </li>
+    <li>
+      <span class="flag">⚠ Figure cosmetics.</span>
+      Note text partially obscured by legend in Fig 2 (BLS bar chart).
+      Y-axis label missing from center/right panels of Fig 5 by-sex chart.
+      LessHS bars should carry small-sample size caveat.
+    </li>
+  </ul>
+
+  <h3>Must address before publication</h3>
+  <ol>
+    <li>Resolve Konczal replication divergences (Age 20–24 and Black) — investigate BLS vintage issue.</li>
+    <li>Confirm publication outlet for Konczal footnote 1.</li>
+    <li>Decision on Less-than-HS women anomaly.</li>
+    <li>Consider adding confidence intervals or sample-size filters to CPS age-band estimates.</li>
+    <li>Robustness check: try 3-month window (not 2) for CPS residuals.</li>
+  </ol>
+
+  <h3>Extended caveats (for methods section / appendix)</h3>
+  <p>
+    <strong>Descriptive, not causal.</strong> This analysis documents a pattern. It cannot establish why
+    young college-educated men are running above baseline. The gap could reflect demand-side factors
+    (slower hiring in fields men disproportionately enter), supply-side factors (more men entering
+    the labor market with degrees), or structural changes in the college-to-work transition.
+    Longitudinal data tracking individuals from graduation would be needed to begin separating these.
+  </p>
+  <p>
+    <strong>One metric, one moment.</strong> These are unemployment rates, not earnings or job quality.
+    A young man working a job below his qualifications is employed in this data.
+    Unemployment captures only one dimension of labor market difficulty.
+  </p>
+  <p>
+    <strong>Sample sizes at fine disaggregations.</strong> The age-band figures use 3-year bands with
+    12-month rolling rates to maximize cell sizes, but estimates at the youngest ages for specific
+    education-sex groups can be noisy. Treat precise peak values as approximate.
+  </p>
+  <p>
+    <strong>Women are also elevated.</strong> College-educated women ages 22–27 are running 1.1 pp above baseline.
+    The comparative framing should not obscure that finding.
+  </p>
+  <p>
+    <strong>Known upward drift in model.</strong> Both education lines in the age-band figures tend to sit
+    modestly above zero even in pre-pandemic hold-out tests, reflecting slow drift in the underlying
+    relationship over time. Konczal notes the same issue. This is why the right comparison is the gap
+    between male and female residuals, not either line's absolute level.
+  </p>
+
+  <h3>Appendix figures (reference only)</h3>
+  <p>
+    <strong>Figure A1 — BLS replication (Konczal window, Nov–Dec 2025):</strong>
+    <code>outputs/fig2_bls_konczal.png</code>
+  </p>
+  <p>
+    <strong>Figure A1b — BLS updated (Jan–Feb 2026):</strong>
+    <code>outputs/fig2_bls_current.png</code>
+  </p>
+  <p>
+    <strong>Figure A2 — Sex × education (ages 22–27):</strong>
+    <code>outputs/fig2_young_adult_sex_educ.png</code>
+  </p>
+  <p>
+    <strong>Figure A3 — Age band (all workers):</strong>
+    <code>outputs/fig5_age_band_all.png</code>
+  </p>
+  <p>
+    <strong>Figure A4 — Age band by sex:</strong>
+    <code>outputs/fig5_age_band_by_sex.png</code>
+  </p>
+
+  <h3>Data and code</h3>
+  <p>Code: <code>projects/male_unemployment/code/</code> — scripts 01–05 reproduce all data and figures from raw.</p>
+  <p>Session notes: <code>projects/male_unemployment/SESSION_STATUS.md</code></p>
+  <p>Footnote: Mike Konczal, "Young College Graduate Unemployment Is Worse Than the Slowdown Explains," <em>[publication]</em>, January 29, 2026.</p>
+</div>
+
+<footer>
+  American Institute for Boys and Men &nbsp;·&nbsp; Analysis memo &nbsp;·&nbsp; Not for public circulation &nbsp;·&nbsp;
+  BLS data through Feb 2026 &nbsp;·&nbsp; CPS data through Dec 2025 &nbsp;·&nbsp;
+  Generated 2026-03-27
+</footer>
+
+<script>
+/* ─────────────────────────────────────────────
+   Shared Plotly config and layout defaults
+───────────────────────────────────────────── */
+const CONFIG = { responsive: true, displayModeBar: false };
+
+const FONT = {
+  family: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+  color: '#333'
+};
+
+const COLOR_ORANGE = '#C55300';
+const COLOR_TEAL   = '#06474D';
+const COLOR_LTEAL  = '#AAC9B8';
+const COLOR_GRAY   = '#767676';
+
+/* ─────────────────────────────────────────────
+   CHART 1 — BLS Demographic Overview
+   Jan–Feb 2026 average residuals (pp)
+   Sorted ascending → bottom = most negative, top = most positive
+───────────────────────────────────────────── */
+(function() {
+  const groups = [
+    'Less than HS',
+    'Teen Women (16–19)',
+    'Hispanic',
+    'Black Men',
+    'Black',
+    'Men 20–24',
+    'Age 20–24',
+    'White',
+    'Men 45–54',
+    'White Men',
+    'Age 16–19',
+    'Hispanic Men',
+    'Age 35–44',
+    'Men (overall)',
+    'Women (overall)',
+    'Men 35–44',
+    'Some College',
+    'Age 55+',
+    'Age 45–54',
+    'Men 55+',
+    'Age 25–34',
+    'Men 25–34',
+    'HS Diploma',
+    'Teen Men (16–19)',
+    'BA+ Graduates',
+    'Asian'
+  ];
+
+  const values = [
+    -1.18,
+    -0.77,
+    -0.73,
+    -0.58,
+    -0.52,
+    -0.49,
+    -0.47,
+    -0.10,
+    -0.06,
+    -0.05,
+    -0.05,
+    -0.04,
+     0.01,
+     0.01,
+     0.04,
+     0.16,
+     0.30,
+     0.33,
+     0.33,
+     0.49,
+     0.55,
+     0.61,
+     0.69,
+     0.85,
+     0.98,
+     1.27
+  ];
+
+  const colors = values.map(v => v >= 0 ? COLOR_ORANGE : COLOR_TEAL);
+
+  const trace = {
+    type: 'bar',
+    orientation: 'h',
+    x: values,
+    y: groups,
+    marker: { color: colors },
+    text: values.map(v => (v >= 0 ? '+' : '') + v.toFixed(2) + ' pp'),
+    textposition: 'outside',
+    hovertemplate: '%{y}: %{x:+.2f} pp<extra></extra>'
+  };
+
+  const layout = {
+    margin: { l: 160, r: 80, t: 30, b: 50 },
+    xaxis: {
+      title: 'Percentage points above (+) / below (−) historical baseline',
+      zeroline: true,
+      zerolinecolor: '#333',
+      zerolinewidth: 1.5,
+      gridcolor: '#E8E8E8',
+      range: [-1.6, 1.7],
+      tickfont: FONT
+    },
+    yaxis: { tickfont: FONT, automargin: true },
+    shapes: [{
+      type: 'line',
+      x0: 0, x1: 0, y0: -0.5, y1: groups.length - 0.5,
+      line: { color: '#333', width: 1.5 }
+    }],
+    font: FONT,
+    plot_bgcolor: '#fff',
+    paper_bgcolor: '#fff',
+    bargap: 0.25
+  };
+
+  Plotly.newPlot('chart-bls', [trace], layout, CONFIG);
+})();
+
+/* ─────────────────────────────────────────────
+   CHART 2 — Young Adult (22–27) Sex × Education
+   Nov–Dec 2025 average, 12-month rolling rates
+───────────────────────────────────────────── */
+(function() {
+  const educ = ['BA+', 'Some College', 'HS Diploma'];
+
+  const male   = [2.89, 0.61, 0.54];
+  const female = [1.10, 0.66, 0.54];
+  const all    = [1.89, 0.64, 0.52];
+
+  const makeTrace = (name, vals, color, dash) => ({
+    type: 'bar',
+    name: name,
+    x: educ,
+    y: vals,
+    marker: { color: color },
+    text: vals.map(v => (v >= 0 ? '+' : '') + v.toFixed(2) + ' pp'),
+    textposition: 'outside',
+    hovertemplate: name + ' — %{x}: %{y:+.2f} pp<extra></extra>'
+  });
+
+  const traces = [
+    makeTrace('Men',   male,   COLOR_ORANGE),
+    makeTrace('Women', female, COLOR_TEAL),
+    makeTrace('All',   all,    COLOR_LTEAL)
+  ];
+
+  const layout = {
+    barmode: 'group',
+    margin: { l: 70, r: 40, t: 30, b: 60 },
+    xaxis: {
+      title: 'Education level',
+      tickfont: FONT
+    },
+    yaxis: {
+      title: 'Unemployment residual (pp)',
+      zeroline: true,
+      zerolinecolor: '#333',
+      zerolinewidth: 1.5,
+      gridcolor: '#E8E8E8',
+      range: [-0.3, 3.6],
+      tickfont: FONT
+    },
+    shapes: [{
+      type: 'line',
+      x0: -0.5, x1: 2.5, y0: 0, y1: 0,
+      line: { color: '#333', width: 1.5 }
+    }],
+    legend: { orientation: 'h', y: 1.08, x: 0.5, xanchor: 'center' },
+    font: FONT,
+    plot_bgcolor: '#fff',
+    paper_bgcolor: '#fff',
+    bargap: 0.2,
+    bargroupgap: 0.05
+  };
+
+  Plotly.newPlot('chart-young-adult', traces, layout, CONFIG);
+})();
+
+/* ─────────────────────────────────────────────
+   CHART 3 — Age Profile: BA+ by Sex
+   Ages 23–34 (3-year bands centered on labeled age)
+   Nov–Dec 2025 average
+───────────────────────────────────────────── */
+(function() {
+  const ages = [23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34];
+
+  const maleBa   = [4.064, 3.443, 2.869, 2.155, 1.859, 1.247, 1.145, 1.356, 1.085, 0.767, 0.537, 0.580];
+  const femaleBa = [1.138, 1.305, 1.097, 1.148, 0.925, 1.142, 1.333, 1.120, 0.869, 0.552, 0.429, 0.484];
+  const allBa    = [2.330, 2.226, 1.873, 1.603, 1.347, 1.192, 1.247, 1.238, 0.970, 0.668, 0.503, 0.561];
+
+  const makeTrace = (name, vals, color, dash) => ({
+    type: 'scatter',
+    mode: 'lines+markers',
+    name: name,
+    x: ages,
+    y: vals,
+    line: { color: color, width: 2.5, dash: dash || 'solid' },
+    marker: { color: color, size: 7 },
+    hovertemplate: name + ' — age %{x}: %{y:+.2f} pp<extra></extra>'
+  });
+
+  const traces = [
+    makeTrace('Men BA+',   maleBa,   COLOR_ORANGE),
+    makeTrace('Women BA+', femaleBa, COLOR_TEAL),
+    makeTrace('All BA+',   allBa,    COLOR_LTEAL, 'dot')
+  ];
+
+  const layout = {
+    margin: { l: 70, r: 40, t: 30, b: 60 },
+    xaxis: {
+      title: 'Age (center of 3-year band)',
+      tickvals: ages,
+      tickfont: FONT,
+      gridcolor: '#E8E8E8'
+    },
+    yaxis: {
+      title: 'Unemployment residual (pp)',
+      zeroline: true,
+      zerolinecolor: '#333',
+      zerolinewidth: 1.5,
+      gridcolor: '#E8E8E8',
+      range: [-0.5, 5.0],
+      tickfont: FONT
+    },
+    shapes: [{
+      type: 'line',
+      x0: 22.5, x1: 34.5, y0: 0, y1: 0,
+      line: { color: '#333', width: 1.5 }
+    }],
+    annotations: [{
+      x: 23, y: 4.064,
+      text: '<b>+4.1 pp</b>',
+      showarrow: true,
+      arrowhead: 2,
+      arrowcolor: COLOR_ORANGE,
+      ax: 30, ay: -30,
+      font: { color: COLOR_ORANGE, size: 12 }
+    }],
+    legend: { orientation: 'h', y: 1.08, x: 0.5, xanchor: 'center' },
+    font: FONT,
+    plot_bgcolor: '#fff',
+    paper_bgcolor: '#fff'
+  };
+
+  Plotly.newPlot('chart-age-ba', traces, layout, CONFIG);
+})();
+
+/* ─────────────────────────────────────────────
+   CHART 4 — Age Profile: Non-BA by Sex
+   Ages 19–30 (3-year bands)
+   Nov–Dec 2025 average
+───────────────────────────────────────────── */
+(function() {
+  const ages = [19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
+
+  const maleNotBa   = [2.181, 2.157, 1.731, 1.290, 0.921, 0.889, 0.952, 0.897, 0.784, 0.855, 0.766, 0.973];
+  const femaleNotBa = [1.499, 1.603, 1.668, 1.699, 1.027, 0.461, 0.643, 0.998, 0.766, 0.264, 0.144, 0.584];
+  const allNotBa    = [1.862, 1.884, 1.704, 1.470, 0.960, 0.701, 0.812, 0.935, 0.767, 0.595, 0.477, 0.787];
+
+  const makeTrace = (name, vals, color, dash) => ({
+    type: 'scatter',
+    mode: 'lines+markers',
+    name: name,
+    x: ages,
+    y: vals,
+    line: { color: color, width: 2.5, dash: dash || 'solid' },
+    marker: { color: color, size: 7 },
+    hovertemplate: name + ' — age %{x}: %{y:+.2f} pp<extra></extra>'
+  });
+
+  const traces = [
+    makeTrace('Men (no BA)',   maleNotBa,   COLOR_ORANGE),
+    makeTrace('Women (no BA)', femaleNotBa, COLOR_TEAL),
+    makeTrace('All (no BA)',   allNotBa,    COLOR_LTEAL, 'dot')
+  ];
+
+  const layout = {
+    margin: { l: 70, r: 40, t: 30, b: 60 },
+    xaxis: {
+      title: 'Age (center of 3-year band)',
+      tickvals: ages,
+      tickfont: FONT,
+      gridcolor: '#E8E8E8'
+    },
+    yaxis: {
+      title: 'Unemployment residual (pp)',
+      zeroline: true,
+      zerolinecolor: '#333',
+      zerolinewidth: 1.5,
+      gridcolor: '#E8E8E8',
+      range: [-0.5, 3.2],
+      tickfont: FONT
+    },
+    shapes: [{
+      type: 'line',
+      x0: 18.5, x1: 30.5, y0: 0, y1: 0,
+      line: { color: '#333', width: 1.5 }
+    }],
+    legend: { orientation: 'h', y: 1.08, x: 0.5, xanchor: 'center' },
+    font: FONT,
+    plot_bgcolor: '#fff',
+    paper_bgcolor: '#fff'
+  };
+
+  Plotly.newPlot('chart-age-notba', traces, layout, CONFIG);
+})();
+</script>
+
+</body>
+</html>
