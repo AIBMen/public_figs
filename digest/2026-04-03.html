@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIBM Research Digest — 2026-04-03</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      font-family: Georgia, serif;
+      color: #05292C;
+      background: #ffffff;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 24px 80px;
+    }
+    h1 { font-size: 1.9rem; color: #06474D; margin-bottom: 0.25em; }
+    h2 { font-size: 1.35rem; color: #06474D; margin-top: 2.5em; margin-bottom: 0.3em; border-bottom: 2px solid #AAC9B8; padding-bottom: 0.2em; }
+    h3 { font-size: 1.05rem; color: #05292C; margin-top: 1.75em; margin-bottom: 0.25em; }
+    h3 a { color: #06474D; text-decoration: none; }
+    h3 a:hover { text-decoration: underline; }
+    p, li { font-size: 1rem; line-height: 1.65; color: #333; }
+    .subtitle { font-size: 1.05rem; color: #767676; margin-top: 0; margin-bottom: 1.5em; }
+    .meta { font-size: 0.9rem; color: #767676; margin-bottom: 0.25em; }
+    .lede {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      border-left: 4px solid #C55300;
+      padding-left: 1em;
+      margin: 1.5em 0;
+      color: #222;
+    }
+    .callout {
+      background: #F3F4F3;
+      border-left: 4px solid #06474D;
+      padding: 1em 1.25em;
+      margin: 1.5em 0;
+      font-size: 0.95rem;
+    }
+    .callout.warn {
+      background: #FEF3EC;
+      border-left-color: #C55300;
+    }
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 3px;
+      margin-bottom: 0.4em;
+    }
+    .label-core    { background: #06474D; color: #fff; }
+    .label-ext     { background: #AAC9B8; color: #05292C; }
+    .label-method  { background: #E8E8E8; color: #444; }
+    .label-polsale { background: #FEF3EC; color: #C55300; border: 1px solid #C55300; }
+    .paper-card {
+      border: 1px solid #E8E8E8;
+      border-radius: 4px;
+      padding: 1.1em 1.3em 0.9em;
+      margin: 1.2em 0;
+    }
+    .paper-card:hover { border-color: #AAC9B8; }
+    .aibm-angle {
+      background: #F3F4F3;
+      border-left: 3px solid #06474D;
+      padding: 0.6em 1em;
+      margin: 0.75em 0 0.5em;
+      font-size: 0.95rem;
+      color: #222;
+    }
+    .extension-ideas {
+      margin: 0.5em 0 0;
+      padding-left: 1.3em;
+      font-size: 0.93rem;
+    }
+    .extension-ideas li { margin-bottom: 0.4em; }
+    .warn-note {
+      background: #FEF3EC;
+      border-left: 3px solid #C55300;
+      padding: 0.5em 1em;
+      margin: 0.6em 0;
+      font-size: 0.88rem;
+      color: #7A3200;
+    }
+    .stats-bar {
+      display: flex;
+      gap: 1.5em;
+      flex-wrap: wrap;
+      margin: 1em 0 1.5em;
+      font-size: 0.93rem;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .stat { color: #555; }
+    .stat strong { color: #06474D; font-size: 1.1em; }
+    details { margin: 2em 0; }
+    details summary {
+      cursor: pointer;
+      font-size: 1.05rem;
+      font-weight: bold;
+      color: #06474D;
+      padding: 0.5em 0;
+      border-bottom: 1px solid #E0E0E0;
+      list-style: none;
+    }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::before { content: "▶ "; font-size: 0.8em; }
+    details[open] summary::before { content: "▼ "; }
+    details .low-rel-section { margin-top: 1em; }
+    details .low-rel-section h4 {
+      font-size: 0.95rem;
+      color: #06474D;
+      margin: 1.2em 0 0.4em;
+      border-bottom: 1px solid #E8E8E8;
+      padding-bottom: 0.2em;
+    }
+    details ul { padding-left: 1.3em; }
+    details li { font-size: 0.9rem; margin-bottom: 0.3em; }
+    details li a { color: #06474D; }
+    .hr-light { border: none; border-top: 1px solid #E8E8E8; margin: 0.5em 0 1em; }
+    footer {
+      margin-top: 4em;
+      font-size: 0.8rem;
+      color: #767676;
+      border-top: 1px solid #E0E0E0;
+      padding-top: 1em;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .dup-note {
+      background: #F8F8F8;
+      border-left: 3px solid #AAC9B8;
+      padding: 0.4em 0.9em;
+      margin: 0.5em 0;
+      font-size: 0.88rem;
+      color: #555;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+<h1>AIBM Research Digest</h1>
+<p class="subtitle">American Institute for Boys and Men &nbsp;·&nbsp; Weekly digest &nbsp;·&nbsp; 2026-04-03</p>
+
+<div class="stats-bar">
+  <span class="stat">Sources: <strong>NBER, IZA, EdWorkingPapers</strong></span>
+  <span class="stat">Staged: <strong>55</strong></span>
+  <span class="stat">Flagged: <strong>17</strong></span>
+  <span class="stat">Low relevance: <strong>38</strong></span>
+  <span class="stat">Pre-filter exclusions: <strong>0</strong></span>
+</div>
+
+<!-- ================================================================
+     CORE
+     ================================================================ -->
+
+<h2>Core — directly about boys, men, or gender gaps</h2>
+
+<!-- 1 -->
+<div class="paper-card">
+  <span class="section-label label-core">#core</span>
+  <h3><a href="https://www.nber.org/papers/w34998" target="_blank">Special Education Substantially Improves Learning: Evidence from Three States</a></h3>
+  <p class="meta">Stephanie G. Coffey, Joshua Goodman, Amy Ellen Schwartz, Leanna Stiefel, Marcus A. Winters, Yunee H. Yoon &nbsp;·&nbsp; NBER &nbsp;·&nbsp; March 2026</p>
+  <hr class="hr-light">
+  <p>Using longitudinal administrative data from Massachusetts, Indiana, and Connecticut, this paper applies an event-study design around initial special education placement to estimate causal effects on test scores. Students entering special ed see substantial, persistent gains in academic achievement — one of the first credibly identified estimates of the program's impact.</p>
+  <div class="aibm-angle">
+    <strong>AIBM angle:</strong> Boys are identified for special education at roughly twice the rate of girls — nearly 1 in 5 boys receives services at some point. If special ed works as well as this paper suggests, the policy implication is direct: the programs that disproportionately serve boys are producing measurable academic gains. This paper provides a strong evidence anchor for AIBM's argument that addressing male educational struggles is both feasible and effective.
+  </div>
+</div>
+
+<!-- 2 -->
+<div class="paper-card">
+  <span class="section-label label-core">#core</span>
+  <h3><a href="https://www.iza.org/publications/dp/18506/the-economic-consequences-of-divorce-and-separation-in-colombia" target="_blank">The Economic Consequences of Divorce and Separation in Colombia</a></h3>
+  <p class="meta">Andres Ham Gonzalez &nbsp;·&nbsp; IZA &nbsp;·&nbsp; March 2026</p>
+  <hr class="hr-light">
+  <p>Using three waves of a nationally representative longitudinal survey with individual fixed effects and region-specific time trends, this paper documents sharp gender asymmetries after union dissolution: men's per-capita household income rises approximately 40 percent post-separation, while women's falls 20 percent in urban areas and nearly 45 percent in rural areas. The gap is driven by household size contraction for men (children stay with mothers) and women's limited earnings recovery in rural settings.</p>
+  <div class="aibm-angle">
+    <strong>AIBM angle:</strong> The paper documents that men experience substantial income gains after divorce — the opposite of the standard narrative. For AIBM's family structure work, this is useful context: the economic consequences of divorce differ sharply by sex, and the story for men in middle-income contexts is not straightforwardly one of financial harm. Whether similar patterns hold in the U.S. — where child support, custody law, and dual-earner households change the calculus — is an open and important question.
+  </div>
+</div>
+
+<!-- 3 -->
+<div class="paper-card">
+  <span class="section-label label-core">#core</span>
+  <h3><a href="https://www.iza.org/publications/dp/18503/school-starting-age-and-the-gender-pay-gap-over-the-life-cycle" target="_blank">School Starting Age and the Gender Pay Gap over the Life Cycle</a></h3>
+  <p class="meta">Kamila Cygan-Rehm, Matthias Westphal &nbsp;·&nbsp; IZA &nbsp;·&nbsp; March 2026</p>
+  <hr class="hr-light">
+  <p>Replicating Fredriksson and Öckert (2014) for Germany (individuals born 1945–1965), this paper finds that later school entry has negligible earnings effects for men but positive effects for women across the lifecycle. The gender difference operates through childbirth postponement and increased labor market attachment for women who enter school later — not through differences in educational attainment, which is similar across entry ages for both sexes.</p>
+  <div class="aibm-angle">
+    <strong>AIBM angle:</strong> The finding that later school entry benefits women but not men is directly in AIBM's wheelhouse. School readiness gaps between boys and girls are well-documented — boys are developmentally less ready at kindergarten age on average. If policy-relevant variation in school entry age produces no earnings payoff for men, this raises deeper questions about whether the structure of early schooling is designed for how boys actually develop.
+  </div>
+</div>
+
+<!-- 4 -->
+<div class="paper-card">
+  <span class="section-label label-core">#core</span>
+  <h3><a href="https://www.iza.org/publications/dp/18508/labor-supply-when-parents-are-in-need-of-care" target="_blank">Labor Supply when Parents are in Need of Care</a></h3>
+  <p class="meta">Elisabeth Fevang, Snorre Kverndokk, Knut Røed &nbsp;·&nbsp; IZA &nbsp;·&nbsp; March 2026</p>
+  <hr class="hr-light">
+  <p>Using Norwegian administrative register data, this paper tracks adult children's labor supply as a parent approaches death or nursing home admission. Overall effects are small — Norway's generous public long-term care system insulates families from major disruptions — but daughters show notably larger short-term work absences than sons. Crucially, effects appear driven by income responses (inheritance expectations) rather than direct time-care burdens.</p>
+  <div class="aibm-angle">
+    <strong>AIBM angle:</strong> This is a rare paper that explicitly breaks caregiving's labor supply effects by sex of offspring — and finds daughters bear a disproportionate short-term burden. For AIBM, the interesting contrast is U.S.-specific: with weaker public long-term care, the burden on male adult children (often overlooked as caregivers) may be substantially larger than Norwegian data would suggest. The inheritance mechanism is also noteworthy for understanding how men and women differently navigate family financial transitions.
+  </div>
+</div>
+
+<!-- 5 -->
+<div class="paper-card">
+  <span class="section-label label-core">#core</span>
+  <h3><a href="https://www.nber.org/papers/w34997" target="_blank">Paid Caregiving Leave Policies and an Update on Paid Parental Leave</a></h3>
+  <p class="meta">Priyanka Anand, Tamar Matiashvili, Maya Rossin-Slater &nbsp;·&nbsp; NBER &nbsp;·&nbsp; March 2026</p>
+  <hr class="hr-light">
+  <p>This handbook chapter synthesizes evidence on paid family leave, distinguishing well-studied parental leave from the nascent literature on non-parental caregiving leave (for elder care, serious illness, etc.). It covers impacts on workers, firms, and care recipients while noting that leave policy has been predominantly studied through a female-worker lens.</p>
+  <div class="aibm-angle">
+    <strong>AIBM angle:</strong> As paid leave expands beyond parental leave to cover elder care and other caregiving roles, men's utilization rates and the barriers to male take-up become directly relevant to AIBM's mission. Male-coded norms around caregiving mean men under-use even available leave — but we know little about non-parental caregiving leave specifically for men. This chapter is a useful starting point for an AIBM synthesis on male caregiving leave uptake.
+  </div>
+</div>
+
+<!-- 6 -->
+<div class="paper-card">
+  <span class="section-label label-core">#core</span>
+  <h3><a href="https://edworkingpapers.com/ai26-1439" target="_blank">The Expansion of Alternative Schools: Impact of Schools Targeting Lower Performing Students</a></h3>
+  <p class="meta">Farah Mallah, Nour Abdul-Razzak, Monica Bhatt &nbsp;·&nbsp; EdWorkingPapers &nbsp;·&nbsp; April 2026</p>
+  <hr class="hr-light">
+  <p>Using proximity-based variation in the timing of alternative school expansions in Chicago, this paper finds that living within a mile of an alternative school raises enrollment by 28%. Alternative schools boost overall high school enrollment and reduce arrests — but significantly reduce college enrollment. The enrollment-versus-college tradeoff is real and sizable.</p>
+  <div class="aibm-angle">
+    <strong>AIBM angle:</strong> Alternative schools disproportionately serve boys — students most at risk of dropping out skew heavily male. The paper's central tradeoff is directly AIBM-relevant: alternative schools keep boys in high school and out of the justice system, but close the college pathway. This is a microcosm of a broader tension in male educational interventions. AIBM should engage with this evidence in work on the male college gap and high school completion.
+  </div>
+</div>
+
+<!-- ================================================================
+     EXTENSION CANDIDATES
+     ================================================================ -->
+
+<h2>Extension candidates — strong design, gender cut possible</h2>
+
+<!-- 7 -->
+<div class="paper-card">
+  <span class="section-label label-ext">#extension-candidate</span>
+  <h3><a href="https://www.nber.org/papers/w34999" target="_blank">The Impact of Virtual Instruction on the Transition to College: Evidence from COVID-19</a></h3>
+  <p class="meta">Nolan G. Pope, Yu Hung Yaow &nbsp;·&nbsp; NBER &nbsp;·&nbsp; March 2026</p>
+  <hr class="hr-light">
+  <p>Using national school-level data on FAFSA submissions, ACT participation, and first-year college enrollment, this paper applies a difference-in-differences design to estimate that COVID-era virtual instruction disrupted the in-person support systems that help high school seniors navigate the college transition. Effects on application and enrollment are meaningful and persistent.</p>
+  <div class="aibm-angle">
+    <strong>AIBM angle:</strong> The college-going gender gap widened during COVID, with boys falling further behind. If virtual instruction primarily disrupts counselor and teacher support, and if boys are less likely to seek help when that support goes remote, this channel could explain part of the widening gap. The paper's FAFSA and ACT data almost certainly has sex breakdowns that aren't reported.
+  </div>
+  <p style="font-size:0.88rem; color:#555; margin: 0.6em 0 0.2em;"><strong>Extension ideas:</strong></p>
+  <ul class="extension-ideas">
+    <li>Use NCES Common Core of Data (school-level sex composition) merged with FAFSA filing rates by school and year to estimate sex-differentiated effects of remote instruction on FAFSA filing — headline: "Remote school reduced FAFSA filing more for boys than girls."</li>
+    <li>Use ACS 2019–2023 (<code>corp/code_snippets/ACS/</code>) to estimate college enrollment trends by sex × high school grad cohort × district remote exposure, testing whether the COVID male college gap widened in high-remote districts.</li>
+    <li>Replicate the DiD design on ACT/SAT participation data, testing whether male test-takers in high-remote districts dropped out of the testing pipeline at higher rates than female test-takers.</li>
+  </ul>
+</div>
+
+<!-- 8 -->
+<div class="paper-card">
+  <span class="section-label label-ext">#extension-candidate</span>
+  <h3><a href="https://www.nber.org/papers/w34996" target="_blank">Supporting Student Engagement During Remote Learning: Three Randomized Controlled Trials in Chicago Public Schools</a></h3>
+  <p class="meta">Monica P. Bhatt, Jonathan Guryan, Fatemeh Momeni, Philip Oreopoulos, Eleni Packis &nbsp;·&nbsp; NBER &nbsp;·&nbsp; March 2026</p>
+  <hr class="hr-light">
+  <p>Three field experiments in Chicago Public Schools tested interventions designed to maintain student participation during remote schooling, including personalized outreach and engagement tools. Results varied across interventions, with some showing significant positive effects on attendance and engagement metrics.</p>
+  <div class="aibm-angle">
+    <strong>AIBM angle:</strong> Remote and hybrid learning has been disproportionately damaging for boys — boys lost more ground academically during COVID-era disruptions. This paper's RCT evidence on what works during remote learning is an ideal candidate for sex-stratified re-analysis, testing whether effective engagement interventions differ by sex.
+  </div>
+  <p style="font-size:0.88rem; color:#555; margin: 0.6em 0 0.2em;"><strong>Extension ideas:</strong></p>
+  <ul class="extension-ideas">
+    <li>Request sex-stratified estimates from the authors' administrative data, or link Chicago Public Schools data to district-level sex composition records to test whether interventions were differentially effective for male students.</li>
+    <li>Use ECLS-K:2011 to establish baseline: were boys' engagement trajectories more sensitive to school disruptions pre-COVID, providing a developmental rationale for sex-targeted remote engagement tools?</li>
+    <li>Design a replication in an AIBM partner district with sex-stratified pre-specified analysis, explicitly targeting boys in grades most at risk of disengagement (grades 6–9).</li>
+  </ul>
+</div>
+
+<!-- 9 -->
+<div class="paper-card">
+  <span class="section-label label-ext">#extension-candidate</span>
+  <h3><a href="https://www.nber.org/papers/w34912" target="_blank">Online Buddies for Job Seekers: A Field Experiment</a></h3>
+  <p class="meta">Bart K. de Koning, Paul Muller, Michèle Belot, Yvonne Engels, Didier Fouarge, Mario Keer, Philipp Kircher, Sandra Phlippen &nbsp;·&nbsp; NBER &nbsp;·&nbsp; March 2026</p>
+  <hr class="hr-light">
+  <p>An RCT in the Netherlands connected unemployed workers — focused on those searching in low-prospect occupations — to "buddies" (former job seekers who had recently switched occupations successfully). The experiment finds positive effects on occupational switching and job finding, demonstrating that peer connections can meaningfully help displaced workers make difficult transitions.</p>
+  <div class="aibm-angle">
+    <strong>AIBM angle:</strong> Men in declining industries face steep occupational switching costs — they're less likely to seek help and less likely to have networks that reach into new sectors. Peer mentorship during unemployment is particularly promising for this group, but whether online buddy programs work differently for men is unexamined. Directly relevant to AIBM's labor market work on displaced male workers.
+  </div>
+  <p style="font-size:0.88rem; color:#555; margin: 0.6em 0 0.2em;"><strong>Extension ideas:</strong></p>
+  <ul class="extension-ideas">
+    <li>Use CPS Displaced Worker Survey data (<code>corp/code_snippets/CPS/</code>) to profile sex differences in post-layoff occupational switching rates in the U.S., establishing the baseline case for a male-targeted buddy program.</li>
+    <li>Contact the authors to examine sex-stratified effects in their existing data — men are likely overrepresented in the low-prospect occupations targeted, so a subgroup estimate may already be feasible.</li>
+    <li>Design a replication using American Job Centers as the platform, with occupational switcher networks specifically targeting male workers displaced from manufacturing.</li>
+  </ul>
+</div>
+
+<!-- 10 -->
+<div class="paper-card">
+  <span class="section-label label-ext">#extension-candidate</span>
+  <h3><a href="https://www.nber.org/papers/w34995" target="_blank">Mind the Gap: AI Adoption in Europe and the U.S.</a></h3>
+  <p class="meta">Alexander Bick, Adam Blandin, David J. Deming, Nicola Fuchs-Schündeln, Jonas Jessen &nbsp;·&nbsp; NBER &nbsp;·&nbsp; March 2026</p>
+  <hr class="hr-light">
+  <p>Combining worker and firm surveys conducted in 2025 and 2026, this paper documents large AI adoption gaps between the U.S. and Europe and across European countries. Worker demographics and firm composition account for an important share of cross-country differences in AI uptake.</p>
+  <div class="aibm-angle">
+    <strong>AIBM angle:</strong> If AI adoption is uneven by worker demographics, and men dominate the sectors most vulnerable to automation while being underrepresented in knowledge-worker roles where AI augments productivity, the sex dimension of AI exposure deserves careful attention. The underlying survey data almost certainly includes sex — a gender cut would be a direct AIBM contribution to the AI displacement debate.
+  </div>
+  <p style="font-size:0.88rem; color:#555; margin: 0.6em 0 0.2em;"><strong>Extension ideas:</strong></p>
+  <ul class="extension-ideas">
+    <li>Use O*NET automation exposure scores merged with CPS-ASEC microdata (<code>corp/code_snippets/CPS/</code>) to estimate AI augmentation vs. displacement risk by sex × education × occupation — testing whether men in routine-task occupations face stagnating wages (displacement) or growth (augmentation).</li>
+    <li>Conduct or commission a U.S. worker survey measuring AI tool adoption by sex, education, and occupation — AIBM's policy audience needs sex-disaggregated numbers on who is using AI at work.</li>
+    <li>Write a brief synthesizing this paper with the Autor "new work" paper and the Korinek/Stiglitz piece (both in this digest): "Is AI Creating or Destroying Jobs for Men?"</li>
+  </ul>
+</div>
+
+<!-- 11 -->
+<div class="paper-card">
+  <span class="section-label label-ext">#extension-candidate</span>
+  <h3><a href="https://www.nber.org/papers/w35005" target="_blank">Early-Life Sugar Restrictions Reduce Genetic Disparities in Adult Adiposity</a></h3>
+  <p class="meta">Tadeja Gracner, Claire Boone, Patrick Turley, Paul Gertler &nbsp;·&nbsp; NBER &nbsp;·&nbsp; March 2026</p>
+  <hr class="hr-light">
+  <p>Using the September 1953 end of UK sugar rationing as a regression discontinuity in early-life sugar exposure, this paper finds that dietary restriction in the first 1,000 days of life substantially reduces genetic predispositions to adult obesity — effects persist even for individuals carrying 2–3× higher genetic risk. The design is unusually clean for an early-life health paper.</p>
+  <div class="aibm-angle">
+    <strong>AIBM angle:</strong> Male infants are biologically more sensitive to early-life nutritional environments — boys show higher metabolic vulnerability and longer developmental windows for diet-related programming. This paper appears to pool across sex; a sex-stratified re-analysis of the UK rationing cohorts could yield publishable AIBM-relevant findings consistent with the male biological vulnerability hypothesis.
+  </div>
+  <p style="font-size:0.88rem; color:#555; margin: 0.6em 0 0.2em;"><strong>Extension ideas:</strong></p>
+  <ul class="extension-ideas">
+    <li>Contact authors about sex-stratified analysis — the regression discontinuity design is very clean and sex is available in UK Biobank data underlying this work.</li>
+    <li>Use NLSY Children data on early nutrition and later metabolic outcomes to test for sex-differentiated diet-health pathways in the U.S., using the sugar restriction paper as methodological blueprint.</li>
+    <li>Write a synthesis on male biological vulnerability in early childhood — drawing on this paper plus the broader literature on boys' higher sensitivity to perinatal health shocks.</li>
+  </ul>
+</div>
+
+<!-- 12 -->
+<div class="paper-card">
+  <span class="section-label label-ext">#extension-candidate</span>
+  <h3><a href="https://www.nber.org/papers/w35008" target="_blank">The Cold War and the U.S. Labor Market</a></h3>
+  <p class="meta">Ilyana Kuziemko, Donato A. Onorato, Suresh Naidu &nbsp;·&nbsp; NBER &nbsp;·&nbsp; March 2026</p>
+  <hr class="hr-light">
+  <p>This paper argues Cold War military procurement contributed to the inclusive growth of postwar America: exogenous variation in defense contracts across states and firms increased manufacturing employment and reduced wage inequality. The identification uses plausibly exogenous state- and firm-level variation in procurement spending.</p>
+  <div class="aibm-angle">
+    <strong>AIBM angle:</strong> Military-industrial manufacturing was overwhelmingly male employment — the postwar boom was, in large part, a male labor market story. As defense manufacturing has declined and reshored to fewer regions, the distributional consequences for male workers in de-industrializing communities are central to AIBM's focus. This paper provides a clean causal anchor for understanding what Cold War procurement meant for men, and by implication, what its decline cost them.
+  </div>
+  <p style="font-size:0.88rem; color:#555; margin: 0.6em 0 0.2em;"><strong>Extension ideas:</strong></p>
+  <ul class="extension-ideas">
+    <li>Link the military procurement variation to Decennial Census or CPS microdata stratified by sex to show that manufacturing employment gains from Cold War contracts were male-concentrated — baseline for understanding current community-level male LFP decline.</li>
+    <li>Use ACS data (<code>corp/code_snippets/ACS/</code>) to estimate what happened to male vs. female LFP in high-procurement counties as military contracts wound down post-Cold War — the mirror of the paper's findings.</li>
+    <li>Write a policy brief: "What the Cold War Built and Deindustrialization Destroyed" — situating male manufacturing employment decline in historical causal context.</li>
+  </ul>
+</div>
+
+<!-- 13 -->
+<div class="paper-card">
+  <span class="section-label label-ext">#extension-candidate</span>
+  <h3><a href="https://www.nber.org/papers/w35006" target="_blank">Cash Transfers and Productive Inclusion: Evidence from Bolsa Familia</a></h3>
+  <p class="meta">Michael C. Best, Felipe Lobel, Valdemar Pinho Neto &nbsp;·&nbsp; NBER &nbsp;·&nbsp; March 2026</p>
+  <hr class="hr-light">
+  <p>Exploiting an increase in the generosity of Brazil's Bolsa Familia program, this paper finds that higher transfers raised employment by 5 percent while reducing hospitalizations 8 percent and mortality 14 percent. The positive employment effect is striking — it directly contradicts the standard labor supply disincentive concern about cash transfers.</p>
+  <div class="aibm-angle">
+    <strong>AIBM angle:</strong> Cash transfer effects are often sex-differentiated — Bolsa Familia delivers benefits to mothers, but male household members' employment responses may differ. The 5% employment gain alongside dramatic health improvements is a policy-relevant finding; understanding whether gains are concentrated among women (who receive the transfer) or also extend to male household members would directly inform AIBM's work on safety net design and male health.
+  </div>
+  <p style="font-size:0.88rem; color:#555; margin: 0.6em 0 0.2em;"><strong>Extension ideas:</strong></p>
+  <ul class="extension-ideas">
+    <li>Contact authors about sex-stratified employment and health effects — whose employment rises 5%? Do hospitalizations fall equally for men and women in recipient households?</li>
+    <li>Use CPS-ASEC or SIPP data (<code>corp/code_snippets/CPS/</code>) to estimate male vs. female employment responses to U.S. cash transfer expansions (EITC, stimulus payments), using existing AIBM code as starting framework.</li>
+    <li>Write a brief on safety net design and male labor supply: synthesizing this paper with the U.S. EITC and welfare reform literature to ask what cash transfer designs best support male employment.</li>
+  </ul>
+</div>
+
+<!-- 14 -->
+<div class="paper-card">
+  <span class="section-label label-ext">#extension-candidate</span>
+  <h3><a href="https://www.iza.org/publications/dp/18504/what-makes-new-work-different-from-more-work" target="_blank">What Makes New Work Different from More Work?</a></h3>
+  <p class="meta">David Autor, Caroline Chin, Anna Salomons, Bryan Seegmiller &nbsp;·&nbsp; IZA &nbsp;·&nbsp; March 2026</p>
+  <hr class="hr-light">
+  <div class="dup-note">Duplicate: This paper also appeared as NBER w34986 in the 2026-03-27 digest. The IZA version includes additional ACS methodology detail. Extension ideas from the prior digest apply; brief entry here for tracking.</div>
+  <p>Using 1940/1950 Census complete-count files and 2011–2023 ACS data, this paper documents that newly created occupational roles attract younger and more educated workers, command persistent wage premiums, and are traceable to regional demand shocks. New work is systematically distinct from simply more work in existing occupations.</p>
+  <div class="aibm-angle">
+    <strong>AIBM angle:</strong> If new work is expertise- and credential-intensive, and if young men without college degrees are underrepresented in knowledge-intensive new occupational categories, the gains from AI-era occupational creation may bypass the demographic AIBM cares most about. The ACS data has sex breakdowns that would make a gender cut directly publishable.
+  </div>
+</div>
+
+<!-- 15 -->
+<div class="paper-card">
+  <span class="section-label label-ext">#extension-candidate</span>
+  <h3><a href="https://www.iza.org/publications/dp/18509/mitigating-mobility-frictions-the-effect-of-cash-on-hand-on-labor-mobility" target="_blank">Mitigating Mobility Frictions: The Effect of Cash-on-Hand on Labor Mobility</a></h3>
+  <p class="meta">Rudolf Winter-Ebmer &nbsp;·&nbsp; IZA &nbsp;·&nbsp; March 2026</p>
+  <hr class="hr-light">
+  <p>Using a sharp eligibility cutoff in Austrian severance pay law (workers above a tenure threshold receive two months' salary on layoff), this paper estimates that cash-on-hand increases post-layoff labor mobility by 8–12%. The effect is strongest for groups with lower baseline mobility rates.</p>
+  <div class="aibm-angle">
+    <strong>AIBM angle:</strong> Men in declining industries — manufacturing, construction, extraction — face the steepest occupational and geographic mobility costs and have the lowest baseline mobility rates. If cash-on-hand after layoff helps, this is directly relevant to policy design for male labor market transitions. The "lower baseline mobility" finding likely maps to male blue-collar workers; a sex breakdown would confirm this.
+  </div>
+  <p style="font-size:0.88rem; color:#555; margin: 0.6em 0 0.2em;"><strong>Extension ideas:</strong></p>
+  <ul class="extension-ideas">
+    <li>Use CPS Displaced Worker Survey to characterize sex differences in post-layoff geographic and occupational mobility in the U.S., establishing whether U.S. men in manufacturing have lower baseline mobility — the precondition for this intervention to matter most for them.</li>
+    <li>Examine whether U.S. UI benefit extensions (natural quasi-experiments) show sex-differentiated effects on labor mobility, testing whether cash loosens mobility constraints differently for men and women.</li>
+    <li>Write a policy brief on cash-on-hand during labor market transitions: what Austrian evidence implies for U.S. Trade Adjustment Assistance design, targeted to male workers in declining industries.</li>
+  </ul>
+</div>
+
+<!-- ================================================================
+     POLITICALLY SALIENT
+     ================================================================ -->
+
+<h2>Politically salient — relevant to current policy debates</h2>
+
+<!-- 16 -->
+<div class="paper-card">
+  <span class="section-label label-polsale">#politically-salient</span>
+  <h3><a href="https://www.iza.org/publications/dp/18513/guidance-over-adoption-experimental-evidence-on-ai-assisted-learning" target="_blank">Guidance Over Adoption: Experimental Evidence on AI-Assisted Learning</a></h3>
+  <p class="meta">Sebastian Gallegos &nbsp;·&nbsp; IZA &nbsp;·&nbsp; April 2026</p>
+  <hr class="hr-light">
+  <p>A randomized field experiment at a Chilean university deployed a course-specific AI assistant (GPT-UAI) for undergraduate econometrics. Encouraging adoption alone had no effect on exam performance. Providing guidance on how to use the tool for tutoring-style interaction improved final exam performance by 0.21 standard deviations and raised passing rates by 12 percentage points.</p>
+  <div class="aibm-angle">
+    <strong>AIBM angle:</strong> The policy implication is directly relevant to AIBM's education work: AI access alone doesn't help struggling students — guided, structured AI use is what produces gains. For boys who are behind academically, this paper provides experimental support for tutoring-style AI deployment rather than just access programs. Whether effects differ by sex is not reported but would be an important AIBM contribution to current debates about AI in education.
+  </div>
+</div>
+
+<!-- 17 -->
+<div class="paper-card">
+  <span class="section-label label-polsale">#politically-salient</span>
+  <h3><a href="https://www.nber.org/papers/w34994" target="_blank">Steering Technological Progress</a></h3>
+  <p class="meta">Anton Korinek, Joseph E. Stiglitz &nbsp;·&nbsp; NBER &nbsp;·&nbsp; March 2026</p>
+  <hr class="hr-light">
+  <p>Korinek and Stiglitz develop a framework for guiding AI and technological innovation toward labor-augmenting rather than labor-replacing applications, evaluating the feasibility and limits of policy tools — taxes, subsidies, regulatory guidance — that could redirect innovative effort toward better-paying jobs.</p>
+  <div class="aibm-angle">
+    <strong>AIBM angle:</strong> AI displacement risk is concentrated in male-dominated occupations — manufacturing, transportation, logistics. If policy can steer AI toward augmentation rather than replacement, male workers in routine manual jobs stand to benefit most from getting this right. This paper is politically salient as industrial policy and AI governance debates intensify; AIBM can speak to who bears the cost if we get it wrong.
+  </div>
+</div>
+
+<!-- ================================================================
+     LOW RELEVANCE (collapsed)
+     ================================================================ -->
+
+<details>
+  <summary>Low relevance (38 papers — spot-check triage quality)</summary>
+
+  <div class="low-rel-section">
+    <h4>NBER (19)</h4>
+    <ul>
+      <li><a href="https://www.nber.org/papers/w35010" target="_blank">Adaptive Enforcement with AI-Augmented Monitoring</a> — Jin, Sokol, Wagman — dynamic inspection game theory, no gender/labor angle</li>
+      <li><a href="https://www.nber.org/papers/w34891" target="_blank">Consumption Wedges: Measuring and Diagnosing Distortions</a> — Indarte et al. — macro consumption-savings theory, no AIBM relevance</li>
+      <li><a href="https://www.nber.org/papers/w35003" target="_blank">Salience and (Non-)Buyer's Remorse: Optimal Nonlinear Pricing</a> — Bodoh-Creed et al. — subscription pricing behavioral economics, no AIBM angle</li>
+      <li><a href="https://www.nber.org/papers/w35004" target="_blank">Using Global Shocks to Understand Executive Compensation</a> — Hummels et al. — CEO pay, no gender breakdown</li>
+      <li><a href="https://www.nber.org/papers/w35000" target="_blank">Decoupling Dollar and Treasury Privilege</a> — Du, Keerati, Schreger — macro finance, no AIBM relevance</li>
+      <li><a href="https://www.nber.org/papers/w35007" target="_blank">The Hidden Cost of Stock Market Concentration</a> — Pastor, Sikorskaya, Wang — fund regulation, no AIBM relevance</li>
+      <li><a href="https://www.nber.org/papers/w35009" target="_blank">Effects of Fiscal News on Household Expectations and Spending</a> — Shim et al. — Korean macro survey, no AIBM angle</li>
+      <li><a href="https://www.nber.org/papers/w35011" target="_blank">Knowledge Spillovers and Local Outcomes: National Labs</a> — Helper, Makan, Shoag — innovation econ history, no gender angle</li>
+      <li><a href="https://www.nber.org/papers/w35012" target="_blank">Planning under Diagnostic Uncertainty: Question-Driven Learning</a> — Caplin — decision theory, no AIBM relevance</li>
+      <li><a href="https://www.nber.org/papers/w35013" target="_blank">Dynamic Adjustment to Trade Shocks</a> — Chen et al. — trade theory, no gender angle</li>
+      <li><a href="https://www.nber.org/papers/w35016" target="_blank">In the Fed's Mind</a> — Kakhbod, Kermani, Maciel — FOMC text analysis, no AIBM relevance</li>
+      <li><a href="https://www.nber.org/papers/w35017" target="_blank">Real Effects of Academic Research Revisited</a> — Jaffe, Shupp, Tartari — university knowledge spillovers survey, no gender angle</li>
+      <li><a href="https://www.nber.org/papers/w35018" target="_blank">Trade, Labor Market Concentration, and Wages</a> — Felix — Brazil trade liberalization, no sex breakdown in reported results</li>
+      <li><a href="https://www.nber.org/papers/w35001" target="_blank">Screening with Cash Deposits in Digital Credit Markets</a> — Gertler, Green, Wolfram — digital lending design, no gender angle</li>
+      <li><a href="https://www.nber.org/papers/w34993" target="_blank">Bank Fees and Household Financial Well-Being</a> — Pagel, Sridhar, Williams — overdraft/NSF fees, no gender angle</li>
+      <li><a href="https://www.nber.org/papers/w34992" target="_blank">Preferences for Warning Signal Quality</a> — Ugarov, Gaduh, McGee — lab experiment methodology, no AIBM angle</li>
+      <li><a href="https://www.nber.org/papers/w35014" target="_blank">The Economics of Postdoctoral Researcher Positions</a> — Ginther, Rosenbloom — academic labor market, no sex breakdown flagged</li>
+      <li><a href="https://www.nber.org/papers/w35002" target="_blank">Networked Information and Industrial Output: Chile's 1972 Truckers' Strike</a> — Edwards — Cybersyn economic history, no AIBM relevance</li>
+      <li><a href="https://www.nber.org/papers/w34890" target="_blank">Improving Organ Procurement Operations</a> — Adam, Agarwal, Ghassemi — healthcare operations research, no AIBM angle</li>
+    </ul>
+
+    <h4>IZA (15)</h4>
+    <ul>
+      <li><a href="https://www.iza.org/publications/dp/18514/the-finance-education-nexus-educational-consequences-of-us-interstate-bank-branching-deregulation" target="_blank">The Finance-Education Nexus</a> — Yang, Zou — school finance/achievement, no sex breakdown</li>
+      <li><a href="https://www.iza.org/publications/dp/18512/dirty-air-dirty-play-the-effect-of-air-pollution-on-sabotage-in-tournaments" target="_blank">Dirty Air, Dirty Play: Air Pollution on Sabotage in Tournaments</a> — Grund — soccer foul behavior, all-male context but no AIBM angle</li>
+      <li><a href="https://www.iza.org/publications/dp/18511/the-geometry-of-heterogeneous-extremes-optimal-transport-and-entropic-design" target="_blank">The Geometry of Heterogeneous Extremes</a> — Buhai — optimal transport theory, no AIBM relevance</li>
+      <li><a href="https://www.iza.org/publications/dp/18510/votes-for-work-job-patronage-and-electoral-mobilization-in-albania" target="_blank">Votes for Work? Job Patronage in Albania</a> — Mendola — Albania public employment/elections, not AIBM scope</li>
+      <li><a href="https://www.iza.org/publications/dp/18507/trade-costs-entry-costs-and-regional-economic-growth-in-china" target="_blank">Trade Costs, Entry Costs, and Regional Economic Growth in China</a> — Qian, Suzuki, Zhang — China regional growth, no gender angle</li>
+      <li><a href="https://www.iza.org/publications/dp/18505/when-teacher-preparation-programs-look-alike-variability-accountability-and-the-limits-of-program-differentiation" target="_blank">When Teacher Preparation Programs Look Alike</a> — Sánchez — Chile teacher prep, no gender angle</li>
+      <li><a href="https://www.iza.org/publications/dp/18502/unpacking-the-wage-sorting-trend" target="_blank">Unpacking the Wage Sorting Trend</a> — Bagger et al. — Danish firm-worker matching, no gender focus</li>
+      <li><a href="https://www.iza.org/publications/dp/18501/peer-vs-network-effects-microfoundations-identification-and-beyond" target="_blank">Peer vs. Network Effects: Microfoundations, Identification, and Beyond</a> — Zenou — network effects theory review, no AIBM angle</li>
+      <li><a href="https://www.iza.org/publications/dp/18500/formal-and-informal-labor-demand-in-egyptian-manufacturing-firms" target="_blank">Formal and Informal Labor Demand in Egyptian Manufacturing</a> — El-Haddad, Krafft, Assaad — Egypt informality, not AIBM scope</li>
+      <li><a href="https://www.iza.org/publications/dp/18499/who-uses-advanced-technologies-evidence-from-manufacturing-firms-from-38-countries-in-2025" target="_blank">Who Uses Advanced Technologies? Evidence from 38 Countries</a> — Wagner — firm adoption patterns, no gender angle</li>
+      <li><a href="https://www.iza.org/publications/dp/18498/cloud-computing-and-extensive-margins-of-exports-an-update-using-data-for-2025" target="_blank">Cloud Computing and Extensive Margins of Exports</a> — Wagner — firm export activity, no AIBM relevance</li>
+      <li><a href="https://www.iza.org/publications/dp/18497/a-note-on-churning-of-exporters-and-dynamics-of-exports-evidence-from-panel-data-for-69-countries" target="_blank">A Note on Churning of Exporters and Dynamics of Exports</a> — Wagner — export dynamics, no AIBM relevance</li>
+      <li><a href="https://www.iza.org/publications/dp/18496/use-of-advanced-technologies-and-extensive-margins-of-exports-in-manufacturing-firms-from-27-eu-countries-in-2025" target="_blank">Advanced Technologies and Export Margins in EU Manufacturing</a> — Wagner — EU exports/tech, no AIBM relevance</li>
+      <li><a href="https://www.iza.org/publications/dp/18495/causal-effects-of-breastfeeding-promotion-on-child-health-understanding-the-role-of-nutrition" target="_blank">Causal Effects of Breastfeeding Promotion on Child Health</a> — Ardila Brenøe, Stearns, Martin — RCT, child health/nutrition, no sex-differentiated analysis reported</li>
+    </ul>
+
+    <h4>EdWorkingPapers (5)</h4>
+    <ul>
+      <li><a href="https://edworkingpapers.com/ai26-1388" target="_blank">Transitioning Teacher Talent: Paraprofessional-to-Teacher Pipeline in NYC</a> — Rodriguez, Wu, Myers — teacher diversity/pipeline, no gender angle</li>
+      <li><a href="https://edworkingpapers.com/ai26-1442" target="_blank">Reliability of Classroom Observations and Student Surveys</a> — Ganimian, Ho, Campos Quintero — measurement reliability, no AIBM angle</li>
+      <li><a href="https://edworkingpapers.com/ai25-1252" target="_blank">A Degree of Choice: Educational Decision-Making after College</a> — Bryer, Kaul — graduate school decisions, no gender angle</li>
+      <li><a href="https://edworkingpapers.com/ai26-1399" target="_blank">Landscape Analysis of the Teaching Profession</a> — Grossman, Kaul, Kavanagh — teacher workforce review, no gender angle</li>
+      <li><a href="https://edworkingpapers.com/ai26-1440" target="_blank">A Sandbox for Hard Choices: School Closure Scenarios</a> — Chrzan, Pearman — simulation of closure policy, no gender angle</li>
+    </ul>
+  </div>
+</details>
+
+<details>
+  <summary>Pre-filter exclusions (0 papers from non-included NBER programs)</summary>
+  <p style="margin-top:1em; font-size:0.9rem; color:#555;">None — all staged papers fall within included programs or lack program metadata.</p>
+</details>
+
+<footer>
+  American Institute for Boys and Men &nbsp;·&nbsp; Research Digest &nbsp;·&nbsp; Generated 2026-04-03
+</footer>
+
+</body>
+</html>
