@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Georgia State University — HEMAC Fact Sheet 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:         #001A50;
+      --navy-dark:    #001040;
+      --navy-hero:    #001440;
+      --navy-card:    #001A50;
+      --gold:         #C69200;
+      --gold-light:   #d9a800;
+      --rust:         #D15700;
+      --steel-blue:   #4D6F91;
+      --gray-bg:      #EDF1F6;
+      --section-bg:   #F9F7F1;
+      --periwinkle:   #E8E8FF;
+      --sky-blue:     #C3E3FE;
+      --text-navy:    #001A50;
+      --text-muted:   #4D6F91;
+      --white:        #ffffff;
+    }
+
+    body {
+      font-family: 'PT Sans', sans-serif;
+      color: var(--text-navy);
+      background: var(--white);
+    }
+
+    /* ── TOP NAV ── */
+    .top-nav {
+      background: var(--navy-dark);
+      padding: 12px 48px;
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .top-nav .logo {
+      position: relative;
+      width: 193px;
+      height: 50px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .top-nav .logo img {
+      position: absolute;
+      height: 235px;
+      width: auto;
+      top: -89px;
+      left: -22px;
+    }
+    .top-nav .logo span {
+      color: var(--white);
+      font-family: 'Merriweather', serif;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: 0.04em;
+    }
+    .top-nav nav { display: flex; gap: 28px; }
+    .top-nav nav a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .top-nav nav a:hover { color: var(--white); }
+    .top-nav .nav-social { display: flex; gap: 16px; align-items: center; }
+    .top-nav .nav-social a {
+      color: rgba(255,255,255,0.65);
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(155deg, #0a2a6e 0%, #001A50 35%, #001040 70%, #000a28 100%);
+      padding: 48px 64px 80px;
+      position: relative;
+      overflow: hidden;
+      min-height: 340px;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 20% 50%, rgba(30,60,140,0.35) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 80% 20%, rgba(20,50,120,0.2) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-breadcrumb {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .pill {
+      background: var(--gold);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 3px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-subtitle {
+      color: rgba(255,255,255,0.75);
+      font-size: 14px;
+      margin-bottom: 32px;
+      font-weight: 400;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-body {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 48px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-school {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .hero-school-logo {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .school-logo-box {
+      background: var(--white);
+      border-radius: 8px;
+      width: 90px; height: 90px;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .school-logo-box img { width: 70px; height: auto; }
+    .school-logo-box .logo-placeholder {
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--navy);
+      font-style: italic;
+    }
+    .school-name {
+      color: var(--white);
+    }
+    .school-name .name-line1 {
+      font-size: 13px;
+      letter-spacing: 0.15em;
+      font-weight: 400;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+    .school-name .name-line2 {
+      font-family: 'Merriweather', serif;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      line-height: 1.1;
+    }
+    .school-name .name-line3 {
+      font-size: 14px;
+      letter-spacing: 0.12em;
+      font-weight: 400;
+      text-transform: uppercase;
+      opacity: 0.75;
+      margin-top: 2px;
+    }
+
+    .hero-school-desc {
+      color: rgba(255,255,255,0.6);
+      font-size: 13px;
+      line-height: 1.6;
+      max-width: 340px;
+    }
+
+    /* ── STICKY TAB NAV ── */
+    .tab-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--navy);
+      display: flex;
+      justify-content: center;
+      gap: 0;
+    }
+    .tab-nav a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 40px;
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s;
+    }
+    .tab-nav a:hover {
+      color: var(--white);
+      background: rgba(255,255,255,0.05);
+    }
+    .tab-nav a.active {
+      color: var(--white);
+      border-bottom-color: var(--gold);
+    }
+    .tab-nav a .material-icons { font-size: 18px; }
+
+    /* ── DATA SECTIONS ── */
+    .data-section {
+      padding: 64px 64px 80px;
+      background: var(--white);
+    }
+    .data-section:nth-child(even) {
+      background: var(--section-bg);
+    }
+
+    .section-header { margin-bottom: 8px; }
+    .section-header h2 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Merriweather', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .section-header h2 .material-icons { font-size: 26px; }
+    .section-subhead {
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-top: 4px;
+      margin-bottom: 32px;
+    }
+
+    /* Cards */
+    .cards-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+
+    .stat-card {
+      background: linear-gradient(150deg, #0a2a6e 0%, #001A50 50%, #000d30 100%);
+      border-radius: 12px;
+      padding: 20px 22px 22px;
+      width: 220px;
+      min-height: 180px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .stat-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(8,21,56,0.35);
+    }
+
+    .card-title-text {
+      color: var(--white);
+      font-size: 14.5px;
+      font-weight: 500;
+      line-height: 1.35;
+      margin-bottom: 14px;
+      flex-grow: 1;
+    }
+
+    .card-value-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0;
+      margin-bottom: 8px;
+    }
+    .card-value-bar {
+      width: 3px;
+      height: 28px;
+      background: var(--gold);
+      border-radius: 2px;
+      margin-right: 10px;
+      flex-shrink: 0;
+    }
+    .card-value-text {
+      color: var(--white);
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .card-desc {
+      color: rgba(255,255,255,0.5);
+      font-size: 11.5px;
+      line-height: 1.4;
+    }
+
+    /* Figure / chart area */
+    .figure-area {
+      margin-top: 8px;
+      width: 85%;
+    }
+    .figure-carousel {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .figure-carousel .carousel-btn {
+      flex-shrink: 0;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.12);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      color: var(--navy);
+      font-size: 20px;
+      transition: box-shadow 0.15s;
+    }
+    .figure-carousel .carousel-btn:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+
+    .figure-slot {
+      flex: 1;
+    }
+
+    .iframe-placeholder {
+      width: 100%;
+      height: 340px;
+      background: #f0f2f6;
+      border-radius: 6px;
+      border: 1px dashed #c0c8d8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #8a96b0;
+      font-size: 13px;
+      gap: 8px;
+    }
+    .iframe-placeholder .material-icons { font-size: 20px; opacity: 0.5; }
+
+    .figure-slot iframe {
+      width: 100%;
+      height: 482px;
+      border: none;
+      border-radius: 6px;
+      display: block;
+    }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 14px;
+    }
+    .carousel-dots span {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #c0c8d8;
+      display: inline-block;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .carousel-dots span.active { background: var(--navy); }
+
+    .figure-title {
+      font-family: 'Merriweather', serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-navy);
+      margin-bottom: 4px;
+    }
+    .figure-subtitle {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .figure-source {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+    .figure-source a { color: var(--navy); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy-dark);
+      padding: 48px 64px;
+      color: rgba(255,255,255,0.65);
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .footer-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-logo {
+      color: var(--white);
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 13px;
+    }
+    .footer-links a:hover { color: var(--white); }
+    .footer-tagline {
+      font-size: 13px;
+      line-height: 1.6;
+      max-width: 600px;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<header class="top-nav">
+  <div class="logo">
+    <img src="../hemac_logo_white.png" alt="HEMAC">
+  </div>
+  <nav>
+    <a href="#">Our network approach</a>
+    <a href="#">About us</a>
+    <a href="#">Resources</a>
+    <a href="#">LearningMan</a>
+    <a href="#">Partner portal</a>
+  </nav>
+  <div class="nav-social">
+    <a href="#">LinkedIn</a>
+    <a href="#">Instagram</a>
+    <a href="#">Newsletter</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-breadcrumb">
+    <span class="pill">2026</span>
+    <span class="pill">Fact Sheets</span>
+  </div>
+
+  <p class="hero-subtitle">Key facts on male enrollment and achievement</p>
+
+  <div class="hero-body">
+    <div class="hero-school">
+      <div class="hero-school-logo">
+        <div class="school-logo-box">
+          <span class="logo-placeholder">G</span>
+        </div>
+        <div class="school-name">
+          <div class="name-line1">Georgia</div>
+          <div class="name-line2">STATE</div>
+          <div class="name-line3">University</div>
+        </div>
+      </div>
+      <p class="hero-school-desc">
+        School-specific data on graduation rates, gender breakdowns, degrees
+        and more from the latest available data.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY TAB NAV -->
+<nav class="tab-nav" id="tab-nav">
+  <a href="#enrollment" class="active">
+    <span class="material-icons">history_edu</span>
+    Enrollment
+  </a>
+  <a href="#graduation">
+    <span class="material-icons">school</span>
+    Graduation
+  </a>
+  <a href="#degrees">
+    <span class="material-icons">workspace_premium</span>
+    Degrees
+  </a>
+</nav>
+
+<!-- ENROLLMENT -->
+<section class="data-section" id="enrollment">
+  <div class="section-header">
+    <h2>
+      <span class="material-icons">history_edu</span>
+      Enrollment
+    </h2>
+    <p class="section-subhead">Male undergraduate and graduate enrollment shares, 2024</p>
+  </div>
+
+  <div class="cards-row">
+    <div class="stat-card">
+      <div class="card-title-text">Male Enrollment<br>(Undergraduate)</div>
+      <div class="card-value-row">
+        <div class="card-value-bar"></div>
+        <span class="card-value-text">40.7%</span>
+      </div>
+      <p class="card-desc">of undergraduate students are male</p>
+    </div>
+
+    <div class="stat-card">
+      <div class="card-title-text">Male Enrollment<br>(Graduate)</div>
+      <div class="card-value-row">
+        <div class="card-value-bar"></div>
+        <span class="card-value-text">34.3%</span>
+      </div>
+      <p class="card-desc">of graduate students are male</p>
+    </div>
+
+    <div class="stat-card">
+      <div class="card-title-text">Male Part-time<br>(Undergraduate)</div>
+      <div class="card-value-row">
+        <div class="card-value-bar"></div>
+        <span class="card-value-text">24.2%</span>
+      </div>
+      <p class="card-desc">of male undergrads enrolled part-time</p>
+    </div>
+  </div>
+
+  <div class="figure-area">
+    <div class="figure-carousel">
+      <button class="carousel-btn">&#8249;</button>
+      <div class="figure-slot" id="enrollment-fig-0">
+        <div class="figure-title">Enrollment by Gender Over Time — Georgia State University</div>
+        <div class="figure-subtitle">Raw male and female undergraduate enrollment, 1990–2024</div>
+        <iframe src="https://datawrapper.dwcdn.net/bS2jA/1/" scrolling="no" frameborder="0" style="border:none;width:100%;" width="100%" height="482" data-external="1"></iframe>
+        <p class="figure-source">Source: NCES IPEDS &bull; <a href="#">Get the data</a> &bull; <a href="#">Download image</a></p>
+      </div>
+      <div class="figure-slot" id="enrollment-fig-1" style="display:none;">
+        <div class="figure-title">Enrollment Composition, 2024 — Georgia State University</div>
+        <div class="figure-subtitle">Undergraduate enrollment by race and gender</div>
+        <iframe src="https://datawrapper.dwcdn.net/AZfVb/1/" scrolling="no" frameborder="0" style="border:none;width:100%;" width="100%" height="700" data-external="1"></iframe>
+        <p class="figure-source">Source: NCES IPEDS &bull; <a href="#">Get the data</a> &bull; <a href="#">Download image</a></p>
+      </div>
+      <button class="carousel-btn">&#8250;</button>
+    </div>
+    <div class="carousel-dots" id="enrollment-dots">
+      <span class="active"></span>
+      <span></span>
+    </div>
+  </div>
+</section>
+
+<!-- GRADUATION -->
+<section class="data-section" id="graduation">
+  <div class="section-header">
+    <h2>
+      <span class="material-icons">school</span>
+      Graduation
+    </h2>
+    <p class="section-subhead">6-year graduation rates by gender (within 150% of normal time), 2024</p>
+  </div>
+
+  <div class="cards-row">
+    <div class="stat-card">
+      <div class="card-title-text">Male Graduation</div>
+      <div class="card-value-row">
+        <div class="card-value-bar"></div>
+        <span class="card-value-text">46.9%</span>
+      </div>
+      <p class="card-desc">6-year graduation rate for men</p>
+    </div>
+  </div>
+
+  <div class="figure-area">
+    <div class="figure-carousel">
+      <button class="carousel-btn">&#8249;</button>
+      <div class="figure-slot" id="graduation-fig-0">
+        <div class="figure-title">Graduation Rates Over Time — Georgia State University</div>
+        <div class="figure-subtitle">6-year graduation rates for men and women (within 150%), 2000–2024</div>
+        <iframe src="https://datawrapper.dwcdn.net/yMeLM/1/" scrolling="no" frameborder="0" style="border:none;width:100%;" width="100%" height="482" data-external="1"></iframe>
+        <p class="figure-source">Source: NCES IPEDS &bull; <a href="#">Get the data</a> &bull; <a href="#">Download image</a></p>
+      </div>
+      <div class="figure-slot" id="graduation-fig-1" style="display:none;">
+        <div class="figure-title">Graduation Rates by Race &amp; Gender, 2024 — Georgia State University</div>
+        <div class="figure-subtitle">6-year graduation rates by race and gender (within 150%)</div>
+        <iframe src="https://datawrapper.dwcdn.net/DE07N/1/" scrolling="no" frameborder="0" style="border:none;width:100%;" width="100%" height="482" data-external="1"></iframe>
+        <p class="figure-source">Source: NCES IPEDS &bull; <a href="#">Get the data</a> &bull; <a href="#">Download image</a></p>
+      </div>
+      <button class="carousel-btn">&#8250;</button>
+    </div>
+    <div class="carousel-dots" id="graduation-dots">
+      <span class="active"></span>
+      <span></span>
+    </div>
+  </div>
+</section>
+
+<!-- DEGREES -->
+<section class="data-section" id="degrees">
+  <div class="section-header">
+    <h2>
+      <span class="material-icons">workspace_premium</span>
+      Degrees
+    </h2>
+    <p class="section-subhead">Male share of degrees conferred by level, 2024</p>
+  </div>
+
+  <div class="cards-row">
+    <div class="stat-card">
+      <div class="card-title-text">Associate's</div>
+      <div class="card-value-row">
+        <div class="card-value-bar"></div>
+        <span class="card-value-text">—</span>
+      </div>
+      <p class="card-desc">male share of associate's degrees</p>
+    </div>
+
+    <div class="stat-card">
+      <div class="card-title-text">Bachelor's</div>
+      <div class="card-value-row">
+        <div class="card-value-bar"></div>
+        <span class="card-value-text">37.8%</span>
+      </div>
+      <p class="card-desc">male share of bachelor's degrees</p>
+    </div>
+
+    <div class="stat-card">
+      <div class="card-title-text">Master's</div>
+      <div class="card-value-row">
+        <div class="card-value-bar"></div>
+        <span class="card-value-text">35.6%</span>
+      </div>
+      <p class="card-desc">male share of master's degrees</p>
+    </div>
+
+    <div class="stat-card">
+      <div class="card-title-text">Doctoral</div>
+      <div class="card-value-row">
+        <div class="card-value-bar"></div>
+        <span class="card-value-text">35.9%</span>
+      </div>
+      <p class="card-desc">male share of doctoral degrees</p>
+    </div>
+
+    <div class="stat-card">
+      <div class="card-title-text">HEAL (Bach.)</div>
+      <div class="card-value-row">
+        <div class="card-value-bar"></div>
+        <span class="card-value-text">18.7%</span>
+      </div>
+      <p class="card-desc">male share of health, education, admin &amp; literacy degrees</p>
+    </div>
+
+    <div class="stat-card">
+      <div class="card-title-text">STEM (Bach.)</div>
+      <div class="card-value-row">
+        <div class="card-value-bar"></div>
+        <span class="card-value-text">54.0%</span>
+      </div>
+      <p class="card-desc">male share of science, technology, engineering &amp; math degrees</p>
+    </div>
+  </div>
+
+  <div class="figure-area">
+    <div class="figure-carousel">
+      <button class="carousel-btn">&#8249;</button>
+      <div class="figure-slot" id="degrees-fig-0">
+        <div class="figure-title">Male Degree Share Over Time — Georgia State University</div>
+        <div class="figure-subtitle">Male share of degrees conferred by level (bachelor's, master's), 2003–2024</div>
+        <iframe src="https://datawrapper.dwcdn.net/sGG6V/1/" scrolling="no" frameborder="0" style="border:none;width:100%;" width="100%" height="482" data-external="1"></iframe>
+        <p class="figure-source">Source: NCES IPEDS &bull; <a href="#">Get the data</a> &bull; <a href="#">Download image</a></p>
+      </div>
+      <div class="figure-slot" id="degrees-fig-1" style="display:none;">
+        <div class="figure-title">Most Common Degrees Among Men, 2024 — Georgia State University</div>
+        <div class="figure-subtitle">Bachelor's degrees conferred to men by field of study</div>
+        <iframe src="https://datawrapper.dwcdn.net/aP0DJ/1/" scrolling="no" frameborder="0" style="border:none;width:100%;" width="100%" height="482" data-external="1"></iframe>
+        <p class="figure-source">Source: NCES IPEDS &bull; <a href="#">Get the data</a> &bull; <a href="#">Download image</a></p>
+      </div>
+      <button class="carousel-btn">&#8250;</button>
+    </div>
+    <div class="carousel-dots" id="degrees-dots">
+      <span class="active"></span>
+      <span></span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-logo">HEMAC</div>
+      <div class="footer-links">
+        <a href="#">Partners</a>
+        <a href="#">Team</a>
+        <a href="#">LearningMan</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <p class="footer-tagline">
+      HEMAC is a program of the American Institute For Boys and Men.
+      HEMAC is open to all who wish to participate without discrimination based on
+      race, color, national origin, sex, disability, or age.
+    </p>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Higher Education Male Achievement Collaborative</span>
+      <span>Data source: NCES IPEDS</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const figureState = {};
+
+  function getFigureCount(section) {
+    let i = 0;
+    while (document.getElementById(`${section}-fig-${i}`)) i++;
+    return i;
+  }
+
+  function showFigure(section, idx) {
+    const count = getFigureCount(section);
+    if (count <= 1) return;
+    figureState[section] = ((idx % count) + count) % count;
+    for (let i = 0; i < count; i++) {
+      const el = document.getElementById(`${section}-fig-${i}`);
+      if (el) el.style.display = i === figureState[section] ? 'block' : 'none';
+    }
+    const dots = document.querySelectorAll(`#${section}-dots span`);
+    dots.forEach((d, i) => d.classList.toggle('active', i === figureState[section]));
+  }
+
+  document.querySelectorAll('.figure-carousel').forEach(carousel => {
+    const section = carousel.closest('.data-section').id;
+    figureState[section] = 0;
+    const [prev, next] = carousel.querySelectorAll('.carousel-btn');
+    prev.addEventListener('click', () => showFigure(section, figureState[section] - 1));
+    next.addEventListener('click', () => showFigure(section, figureState[section] + 1));
+  });
+
+  const sections = ['enrollment', 'graduation', 'degrees'];
+  const tabLinks = document.querySelectorAll('.tab-nav a');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        tabLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${id}`));
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
